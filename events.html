@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events — Tom's Dive & Swim · Austin, TX</title>
+<meta name="description" content="Upcoming events at Tom's Dive & Swim: dive classes, local dive days, Aquanauts socials, gear demos, and trip departures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .event-row {
+    display: grid; grid-template-columns: 110px 1fr auto auto;
+    gap: 24px; padding: 22px 0;
+    border-top: 1px solid var(--line);
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .event-row { grid-template-columns: 80px 1fr; gap: 12px; }
+    .event-row .event-kind, .event-row .event-link { grid-column: 2; justify-self: start; }
+  }
+  .event-date {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+    font-size: 24px; line-height: 1; text-align: center;
+    border-right: 1px solid var(--line); padding-right: 24px;
+  }
+  .event-date small {
+    display: block; font-family: 'Manrope', sans-serif;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.5; margin-top: 4px;
+  }
+  .event-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; font-family: 'Manrope', sans-serif; }
+  .event-info p { font-size: 13px; opacity: 0.7; }
+  .event-kind {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px;
+    border: 1px solid currentColor; font-weight: 600;
+  }
+  .event-kind.class { color: var(--sun); }
+  .event-kind.club { color: #6fd3a3; }
+  .event-kind.trip { color: var(--coral); }
+  .event-link { font-size: 13px; font-weight: 600; color: var(--sand); text-decoration: none; opacity: 0.85; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html">Dive</a>
+    <a href="travel.html">Travel</a>
+    <a href="club.html">Club</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="dive.html#calendar" class="nav-cta">Class Calendar →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-deep short with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">Classes · Dives · Socials · Departures</div>
+    <h1 class="hero-title">What's <em>happening</em><br>at Tom's.</h1>
+    <p class="hero-sub">Everything on one calendar — certification classes, local dive days, Aquanauts socials, and trip departures.</p>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section deep">
+  <div class="container-narrow">
+    <div class="event-row">
+      <div class="event-date">Jun 7<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Open Water — Pool Session 1</h4>
+        <p>5909 Burnet Rd · 9am – 1pm</p>
+      </div>
+      <span class="event-kind class">Class</span>
+      <a href="https://shop.tomsscuba.com/" class="event-link">Reserve →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jun 14<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Perfect Buoyancy Specialty</h4>
+        <p>5909 Burnet Rd · 10am – 4pm</p>
+      </div>
+      <span class="event-kind class">Class</span>
+      <a href="https://shop.tomsscuba.com/" class="event-link">Reserve →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jun 21<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Open Water Checkout — Lake Travis</h4>
+        <p>Mansfield Dam Park · 8am – 5pm</p>
+      </div>
+      <span class="event-kind class">Class</span>
+      <a href="https://shop.tomsscuba.com/" class="event-link">Waitlist →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jun 27<small>Fri</small></div>
+      <div class="event-info">
+        <h4>Aquanauts Social — Cozumel trip recap</h4>
+        <p>Tom's shop · 7pm · Guests welcome</p>
+      </div>
+      <span class="event-kind club">Club</span>
+      <a href="contact.html" class="event-link">RSVP →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jul 12<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Local Dive Day — Lake Travis + Nitrox class</h4>
+        <p>Mansfield Dam Park & shop · morning</p>
+      </div>
+      <span class="event-kind club">Club</span>
+      <a href="contact.html" class="event-link">RSVP →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jul 25<small>Fri</small></div>
+      <div class="event-info">
+        <h4>Aquanauts Social — Photo night</h4>
+        <p>Tom's shop · 7pm</p>
+      </div>
+      <span class="event-kind club">Club</span>
+      <a href="contact.html" class="event-link">RSVP →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Aug 16<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Local Dive Day — Blue Lagoon, Huntsville</h4>
+        <p>Road trip · 7am departure from shop</p>
+      </div>
+      <span class="event-kind club">Club</span>
+      <a href="contact.html" class="event-link">RSVP →</a>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Sep 14<small>Sun</small></div>
+      <div class="event-info">
+        <h4>Cozumel Group Trip Departs</h4>
+        <p>Sep 14 – 21 · Sold out</p>
+      </div>
+      <span class="event-kind trip">Trip</span>
+      <span class="event-link" style="color: var(--coral); opacity: 0.7;">Sold out</span>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Oct 11<small>Sat</small></div>
+      <div class="event-info">
+        <h4>Bonaire Group Trip Departs</h4>
+        <p>Oct 11 – 18 · Spots open</p>
+      </div>
+      <span class="event-kind trip">Trip</span>
+      <a href="https://shop.tomsscuba.com/" class="event-link">Book →</a>
+    </div>
+
+    <p class="text-center mt-5" style="opacity: 0.5; font-size: 13px;">
+      Sample calendar shown. For live availability, check the online store or call (512) 451-3425.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section warm" style="text-align: center;">
+  <div class="container-narrow">
+    <h2 class="h2 mb-4">Never miss a <em>dive day.</em></h2>
+    <p class="lead" style="opacity: 0.78; max-width: 540px; margin: 0 auto 36px;">
+      Aquanauts get every event in the WhatsApp group, plus presale access to trips. The newsletter covers the rest.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="club.html" class="btn btn-coral">Join the Aquanauts <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-ghost-dark">Get the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html#specialties">Specialty courses</a>
+      <a href="dive.html#calendar">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="shop.html">Shop & gear</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dive Shop, Gear & Service — Tom's Dive & Swim · Austin, TX</title>
+<meta name="description" content="4,500 sq ft full-service dive shop in Austin: scuba gear retail, rentals, equipment repair, and air & nitrox fills. Shop online at shop.tomsscuba.com or visit us on Burnet Road.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .service-card {
+    background: var(--paper);
+    border: 1px solid var(--line-d);
+    border-radius: 4px;
+    padding: 36px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--coral);
+    box-shadow: 0 20px 60px rgba(10,31,46,0.08);
+  }
+  .service-card h3 {
+    font-size: 26px; font-weight: 400; margin-bottom: 12px;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+  }
+  .service-card p { font-size: 15px; opacity: 0.78; line-height: 1.6; margin-bottom: 20px; }
+  .service-list { list-style: none; }
+  .service-list li {
+    padding: 8px 0; font-size: 14px;
+    display: flex; gap: 10px;
+  }
+  .service-list li::before { content: '·'; color: var(--coral); font-weight: 700; }
+
+  .fill-table {
+    width: 100%; border-collapse: collapse; font-size: 15px;
+  }
+  .fill-table td {
+    padding: 14px 0; border-top: 1px solid var(--line);
+  }
+  .fill-table td:last-child {
+    text-align: right;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+    font-size: 19px; color: var(--sun);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html">Dive</a>
+    <a href="travel.html">Travel</a>
+    <a href="club.html">Club</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shop.tomsscuba.com/" class="nav-cta">Shop Online →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-deep short with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">4,500 sq ft · Retail · Rentals · Repair · Fills</div>
+    <h1 class="hero-title">The gear room of<br><em>Central Texas.</em></h1>
+    <p class="hero-sub">Four decades of fitting divers and swimmers with the right equipment. Walk in for advice you can't get online — or shop online and pick up at the counter.</p>
+    <div class="hero-ctas">
+      <a href="https://shop.tomsscuba.com/" class="btn btn-primary">Shop online <span class="arrow">→</span></a>
+      <a href="#services" class="btn btn-ghost">Repairs & fills</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="heritage-strip">
+  <span><span class="dot"></span>Air & Nitrox fills</span>
+  <span><span class="dot"></span>Full rental fleet</span>
+  <span><span class="dot"></span>Authorized service center</span>
+  <span><span class="dot"></span>Swim gear too</span>
+</div>
+
+<!-- SERVICES -->
+<section class="section warm" id="services">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow coral"><span class="num"><span>1</span></span> In the shop</div>
+      <h2 class="h2">Four things we do<br><em>every day.</em></h2>
+    </div>
+    <p>Gear is personal. A mask that fits your face, a BCD that fits your dive style, a wetsuit that fits, period. That's why the shop matters — and why we've kept 4,500 square feet of it on Burnet Road for forty years.</p>
+  </div>
+
+  <div class="container">
+    <div class="card-grid-2">
+      <div class="service-card">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Retail</div>
+        <h3>Gear that fits you</h3>
+        <p>Masks, fins, snorkels, BCDs, regulators, computers, wetsuits, and exposure gear from the brands we actually trust — plus swim gear, goggles, and training equipment for the pool side of the family.</p>
+        <ul class="service-list">
+          <li>Personal fitting with experienced staff</li>
+          <li>Try gear in our pool before you buy (ask us)</li>
+          <li>Aquanauts members save 10% on most items</li>
+          <li>Order online, pick up in store</li>
+        </ul>
+        <a href="https://shop.tomsscuba.com/" class="btn btn-coral mt-4">Browse online store →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Rentals</div>
+        <h3>Rental fleet</h3>
+        <p>Full sets or individual pieces. Our rental gear is serviced on schedule by our own technicians — the same fleet we trust for our certification classes.</p>
+        <ul class="service-list">
+          <li>BCDs, regulators, wetsuits, tanks, weights</li>
+          <li>Daily and weekend rates</li>
+          <li>Trip-length rentals for Tom's travel</li>
+          <li>Student packages during certification</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost-dark mt-4">Ask about rentals →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Service & repair</div>
+        <h3>Equipment repair</h3>
+        <p>Factory-trained technicians servicing regulators, BCDs, and computers. Annual service keeps your warranty valid and your gear breathing the way it should.</p>
+        <ul class="service-list">
+          <li>Regulator annual service & rebuilds</li>
+          <li>BCD inspection and bladder repair</li>
+          <li>Tank visual inspection & hydrostatic testing</li>
+          <li>Computer battery changes & pressure checks</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost-dark mt-4">Schedule service →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Air & Nitrox</div>
+        <h3>Fill station</h3>
+        <p>Clean, dry breathing air and membrane nitrox while you wait. Bring your tanks by during shop hours — most fills take minutes.</p>
+        <table class="fill-table" style="color: var(--ink);">
+          <tr><td>Standard air fill</td><td style="color: var(--coral);">$</td></tr>
+          <tr><td>Nitrox fill (up to 40%)</td><td style="color: var(--coral);">$$</td></tr>
+          <tr><td>Fill card (10 fills)</td><td style="color: var(--coral);">$$$</td></tr>
+          <tr><td>Club dive day fills (members)</td><td style="color: var(--coral);">Free</td></tr>
+        </table>
+        <p style="font-size: 12px; opacity: 0.6; margin-top: 16px; margin-bottom: 0;">Current fill prices posted in store and at checkout online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE STORE BANNER -->
+<section class="section mid" style="text-align: center;">
+  <div class="container-narrow">
+    <div class="eyebrow sun" style="justify-content:center; display:inline-flex;"><span class="num"><span>2</span></span> Online store</div>
+    <h2 class="h2 mb-4">Shop from your <em>couch.</em><br>Pick up at the counter.</h2>
+    <p class="lead" style="opacity: 0.8; max-width: 560px; margin: 0 auto 36px;">
+      Our full online store carries gear, course registrations, and trip bookings — synced live with shop inventory. Order ahead and we'll have it waiting, or ship it to your door.
+    </p>
+    <a href="https://shop.tomsscuba.com/" class="btn btn-primary">Open shop.tomsscuba.com <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section warm" style="text-align: center;">
+  <div class="container-narrow">
+    <h2 class="h2 mb-4">Or just <em>come by.</em></h2>
+    <p class="lead" style="opacity: 0.78; max-width: 540px; margin: 0 auto 36px;">
+      5909 Burnet Rd. Monday through Friday 10 to 6:30, Saturday 10 to 5. Bring your questions, your leaky regulator, or your kid who wants to see the pool.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="contact.html" class="btn btn-coral">Directions & hours <span class="arrow">→</span></a>
+      <a href="tel:5124513425" class="btn btn-ghost-dark">Call (512) 451-3425</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html#specialties">Specialty courses</a>
+      <a href="dive.html#calendar">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="https://shop.tomsscuba.com/">Online store</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
