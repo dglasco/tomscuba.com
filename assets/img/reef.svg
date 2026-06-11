@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 220" preserveAspectRatio="none">
+<g fill="#03101c" stroke="#03101c">
+  <!-- seabed dunes (edges meet at y=196 for seamless repeat) -->
+  <path stroke="none" d="M0,220 L0,196 C120,188 240,200 380,193 C520,186 640,202 800,195 C960,188 1080,201 1220,193 C1360,186 1500,199 1600,196 L1600,220 Z"/>
+
+  <!-- kelp / seagrass cluster left -->
+  <g fill="none" stroke-width="6" stroke-linecap="round">
+    <path d="M52,198 C44,160 62,130 50,92"/>
+    <path d="M70,199 C78,150 58,120 74,70"/>
+    <path d="M88,198 C84,168 100,140 92,112"/>
+  </g>
+
+  <!-- staghorn coral cluster -->
+  <g fill="none" stroke-width="9" stroke-linecap="round">
+    <path d="M150,200 C152,170 148,150 154,128"/>
+    <path d="M153,160 C140,148 132,132 130,116"/>
+    <path d="M153,150 C166,138 172,124 174,104"/>
+    <path d="M152,178 C138,172 128,160 124,150"/>
+    <path d="M172,112 C178,102 186,96 196,92"/>
+    <path d="M133,122 C126,112 118,108 108,106"/>
+  </g>
+
+  <!-- brain coral domes -->
+  <ellipse stroke="none" cx="300" cy="196" rx="62" ry="30"/>
+  <ellipse stroke="none" cx="352" cy="200" rx="34" ry="18"/>
+
+  <!-- sea fan (radiating fronds) -->
+  <g fill="none" stroke-width="7" stroke-linecap="round">
+    <path d="M520,198 C512,160 498,130 478,108"/>
+    <path d="M520,198 C516,154 508,120 498,96"/>
+    <path d="M520,198 C522,150 520,114 516,86"/>
+    <path d="M520,198 C528,152 536,118 544,94"/>
+    <path d="M520,198 C534,160 550,132 568,112"/>
+  </g>
+
+  <!-- tube sponges -->
+  <g stroke="none">
+    <rect x="688" y="124" width="20" height="76" rx="10"/>
+    <rect x="712" y="104" width="22" height="96" rx="11"/>
+    <rect x="738" y="140" width="18" height="60" rx="9"/>
+  </g>
+
+  <!-- anemone -->
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M862,196 C856,182 850,174 842,168"/>
+    <path d="M868,196 C864,178 860,168 856,160"/>
+    <path d="M876,196 C876,176 874,164 874,154"/>
+    <path d="M884,196 C888,178 892,166 896,158"/>
+    <path d="M890,196 C898,182 906,174 914,168"/>
+  </g>
+  <ellipse stroke="none" cx="876" cy="198" rx="30" ry="12"/>
+
+  <!-- mid rocks + dome -->
+  <ellipse stroke="none" cx="980" cy="200" rx="44" ry="20"/>
+  <ellipse stroke="none" cx="1030" cy="203" rx="22" ry="11"/>
+
+  <!-- seagrass mid-right -->
+  <g fill="none" stroke-width="6" stroke-linecap="round">
+    <path d="M1102,198 C1094,158 1112,128 1100,96"/>
+    <path d="M1120,199 C1128,152 1110,124 1124,84"/>
+    <path d="M1138,198 C1132,166 1148,140 1140,116"/>
+  </g>
+
+  <!-- tall staghorn cluster right -->
+  <g fill="none" stroke-width="10" stroke-linecap="round">
+    <path d="M1260,202 C1262,164 1256,134 1264,100"/>
+    <path d="M1262,150 C1246,138 1236,122 1232,102"/>
+    <path d="M1262,138 C1278,124 1286,106 1288,84"/>
+    <path d="M1263,170 C1248,164 1238,154 1232,142"/>
+    <path d="M1287,92 C1294,80 1303,72 1314,68"/>
+    <path d="M1235,108 C1228,96 1220,90 1210,88"/>
+    <path d="M1264,108 C1268,94 1266,82 1270,68"/>
+  </g>
+
+  <!-- starfish on the sand -->
+  <path stroke="none" d="M1392,206 L1400,190 L1408,206 L1424,208 L1411,217 L1415,232 L1400,222 L1385,232 L1389,217 L1376,208 Z" transform="scale(1,0.62) translate(0,118)"/>
+
+  <!-- small grass right edge-safe -->
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M1500,198 C1494,172 1506,152 1498,132"/>
+    <path d="M1514,199 C1520,168 1508,148 1518,124"/>
+  </g>
+</g>
+</svg>
