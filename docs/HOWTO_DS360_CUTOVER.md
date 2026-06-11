@@ -80,7 +80,12 @@ In the DS360 Storefront Control Panel, work through the checklist in
 - Preferences: confirm GTM/GA tracking matches the main site
   (container `GTM-N28V49VS`)
 
-## Step 4 — Replace placeholder links with real storefront URLs
+## Step 4 — Verify storefront deep links
+
+**Status: already wired.** The repo's commerce CTAs use the real paths pulled
+from the current DS360 site. After the subdomain is live, click-test each
+link below — especially the `/calendar/register/<id>` links, whose IDs can
+change if classes are recreated in the POS.
 
 Every commerce CTA in the repo currently points at the storefront root.
 The current DS360 site already exposes the real paths — they will carry over

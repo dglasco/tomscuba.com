@@ -32,9 +32,11 @@ sample, stale, or absent. Nothing here blocks previewing; several items
    At minimum, a privacy policy is needed (the site sets GTM/analytics
    cookies). Port the existing pages or link to the storefront's versions.
 
-6. **Storefront deep links.** All commerce CTAs point at the storefront
-   root (intentional placeholders). Swap per the table in
-   `HOWTO_DS360_CUTOVER.md` § 4.
+6. **Storefront deep links.** ✅ DONE — commerce CTAs now use real deep
+   links pulled from the live site (`/courses/...`, `/product-groups/...`,
+   `/trips`, `/calendar/register/<id>`). After the subdomain goes live,
+   click-test each one; class-registration IDs can change if classes are
+   recreated in the POS.
 
 ## 🟡 High value — fix in the first weeks
 
