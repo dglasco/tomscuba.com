@@ -1,27 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" preserveAspectRatio="none">
 <defs>
-  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#f4f9fb" stop-opacity="0"/>
-    <stop offset="0.30" stop-color="#f4f9fb" stop-opacity="0.92"/>
-    <stop offset="1" stop-color="#eef6f9" stop-opacity="0.96"/>
+  <!-- Tile fade-in from transparent top to solid bottom -->
+  <linearGradient id="tile-fade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#dff2fa" stop-opacity="0"/>
+    <stop offset="22%" stop-color="#dff2fa" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#eaf6fc" stop-opacity="0.96"/>
   </linearGradient>
+  <!-- Subtle tile depth shading -->
+  <linearGradient id="grout" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#7ab8d4" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#5a9ab8" stop-opacity="0.55"/>
+  </linearGradient>
+  <!-- Caustic shimmer overlay -->
+  <filter id="caustic-blur">
+    <feGaussianBlur stdDeviation="1.2"/>
+  </filter>
 </defs>
-<!-- white tile field, fading in at the top like depth haze -->
-<rect x="0" y="0" width="800" height="160" fill="url(#fade)"/>
-<!-- grout lines -->
-<g stroke="#8fc3d6" stroke-width="1.6" stroke-opacity="0.9">
-  <path d="M0 64 H800 M0 96 H800 M0 128 H800"/>
-  <path d="M40 48 V160 M80 48 V160 M120 48 V160 M160 48 V160 M200 48 V160 M240 48 V160 M280 48 V160 M320 48 V160 M360 48 V160 M400 48 V160 M440 48 V160 M480 48 V160 M520 48 V160 M560 48 V160 M600 48 V160 M640 48 V160 M680 48 V160 M720 48 V160 M760 48 V160"/>
+
+<!-- Tile field -->
+<rect x="0" y="0" width="800" height="180" fill="url(#tile-fade)"/>
+
+<!-- Horizontal grout lines -->
+<g stroke="url(#grout)" stroke-width="1.4">
+  <line x1="0" y1="45" x2="800" y2="45"/>
+  <line x1="0" y1="90" x2="800" y2="90"/>
+  <line x1="0" y1="135" x2="800" y2="135"/>
 </g>
-<!-- navy lane stripe with T-mark, classic pool bottom -->
-<rect x="0" y="140" width="800" height="13" fill="#143b56" fill-opacity="0.85"/>
-<rect x="392" y="104" width="13" height="49" fill="#143b56" fill-opacity="0.85"/>
-<!-- drains -->
-<g fill="none" stroke="#7eb4c8" stroke-width="2.4">
-  <circle cx="140" cy="112" r="9"/>
-  <circle cx="660" cy="112" r="9"/>
+<!-- Vertical grout lines -->
+<g stroke="url(#grout)" stroke-width="1.4">
+  <line x1="40" y1="0" x2="40" y2="180"/>  <line x1="80" y1="0" x2="80" y2="180"/>
+  <line x1="120" y1="0" x2="120" y2="180"/> <line x1="160" y1="0" x2="160" y2="180"/>
+  <line x1="200" y1="0" x2="200" y2="180"/> <line x1="240" y1="0" x2="240" y2="180"/>
+  <line x1="280" y1="0" x2="280" y2="180"/> <line x1="320" y1="0" x2="320" y2="180"/>
+  <line x1="360" y1="0" x2="360" y2="180"/> <line x1="400" y1="0" x2="400" y2="180"/>
+  <line x1="440" y1="0" x2="440" y2="180"/> <line x1="480" y1="0" x2="480" y2="180"/>
+  <line x1="520" y1="0" x2="520" y2="180"/> <line x1="560" y1="0" x2="560" y2="180"/>
+  <line x1="600" y1="0" x2="600" y2="180"/> <line x1="640" y1="0" x2="640" y2="180"/>
+  <line x1="680" y1="0" x2="680" y2="180"/> <line x1="720" y1="0" x2="720" y2="180"/>
+  <line x1="760" y1="0" x2="760" y2="180"/>
 </g>
-<g stroke="#7eb4c8" stroke-width="1.6">
-  <path d="M134 112 H146 M140 106 V118 M654 112 H666 M660 106 V118"/>
+
+<!-- Navy lane stripe with T-mark -->
+<rect x="0" y="158" width="800" height="16" fill="#1a3d5c" fill-opacity="0.82"/>
+<rect x="396" y="116" width="8" height="55" fill="#1a3d5c" fill-opacity="0.82"/>
+
+<!-- Drain covers -->
+<g>
+  <circle cx="150" cy="118" r="10" fill="none" stroke="#6aadca" stroke-width="2.2" stroke-opacity="0.8"/>
+  <line x1="144" y1="118" x2="156" y2="118" stroke="#6aadca" stroke-width="1.6" stroke-opacity="0.7"/>
+  <line x1="150" y1="112" x2="150" y2="124" stroke="#6aadca" stroke-width="1.6" stroke-opacity="0.7"/>
+  <circle cx="650" cy="118" r="10" fill="none" stroke="#6aadca" stroke-width="2.2" stroke-opacity="0.8"/>
+  <line x1="644" y1="118" x2="656" y2="118" stroke="#6aadca" stroke-width="1.6" stroke-opacity="0.7"/>
+  <line x1="650" y1="112" x2="650" y2="124" stroke="#6aadca" stroke-width="1.6" stroke-opacity="0.7"/>
+</g>
+
+<!-- WATER CAUSTICS — bright wiggly light refractions -->
+<g fill="none" stroke="white" filter="url(#caustic-blur)">
+  <!-- Pattern row 1 -->
+  <path d="M10,62 Q28,52 50,65 Q72,76 96,60 Q118,46 142,62 Q165,76 188,58 Q212,42 238,60 Q262,76 285,56 Q308,40 330,58 Q352,74 375,55 Q398,38 422,58 Q445,76 468,54 Q491,36 515,58 Q538,78 560,54 Q582,34 605,58 Q628,78 650,54 Q672,36 695,58 Q718,78 740,56 Q762,38 785,60" stroke-width="1.4" stroke-opacity="0.22"/>
+  <!-- Pattern row 2 -->
+  <path d="M0,84 Q22,72 48,86 Q72,98 98,78 Q122,62 148,80 Q174,96 198,74 Q222,56 248,76 Q272,94 298,72 Q322,54 348,74 Q372,92 398,70 Q424,52 450,72 Q474,90 500,68 Q526,50 552,70 Q576,88 600,68 Q624,50 650,68 Q674,86 698,66 Q722,50 748,68 Q772,86 800,64" stroke-width="1.2" stroke-opacity="0.18"/>
+  <!-- Pattern row 3 — offset -->
+  <path d="M20,106 Q42,94 68,108 Q92,120 118,100 Q144,82 170,102 Q196,120 220,98 Q244,78 270,100 Q294,118 318,96 Q342,76 366,96 Q390,114 414,92 Q438,72 462,94 Q486,112 510,90 Q534,72 558,92 Q582,110 606,88 Q630,70 654,90 Q678,108 702,88 Q726,70 750,88 Q774,106 800,86" stroke-width="1.3" stroke-opacity="0.20"/>
+  <!-- Short bright caustic clusters -->
+  <path d="M200,70 Q214,62 228,72" stroke-width="2" stroke-opacity="0.28"/>
+  <path d="M380,88 Q396,78 412,90" stroke-width="2" stroke-opacity="0.25"/>
+  <path d="M560,72 Q572,64 584,74" stroke-width="2" stroke-opacity="0.28"/>
+  <path d="M100,100 Q112,92 126,102" stroke-width="1.8" stroke-opacity="0.22"/>
+  <path d="M680,96 Q694,88 706,98" stroke-width="1.8" stroke-opacity="0.22"/>
 </g>
 </svg>

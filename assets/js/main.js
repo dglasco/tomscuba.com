@@ -42,39 +42,87 @@
     }
   }
 
-  // ============ UNDERWATER SCENERY: reef floor + drifting fish ============
-  const FISH_PATH = 'M2 12 Q12 2 24 5 Q32 7 36 12 L46 5 Q43 12 46 19 L36 12 Q32 17 24 19 Q12 22 2 12 Z';
+  // ============ UNDERWATER SCENERY: reef floor + fish + swimmers ============
 
+  // Realistic fish: oval body + forked tail + dorsal/pectoral fins + eye
   function fishSvg(w, color, flip) {
-    const h = Math.round(w / 2);
-    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 48 24"' +
-      (flip ? ' style="transform: scaleX(-1);"' : '') +
-      '><path d="' + FISH_PATH + '" fill="' + color + '"/></svg>';
+    const h = Math.round(w * 0.52);
+    const gid = 'fg' + (w * 100 + Math.floor(Math.random() * 9999)) | 0;
+    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 90 47"' +
+      (flip ? ' style="transform:scaleX(-1)"' : '') + '>' +
+      '<defs><radialGradient id="' + gid + '" cx="62%" cy="38%" r="52%">' +
+        '<stop offset="0%" stop-color="' + color + '" stop-opacity="1.1"/>' +
+        '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.5"/>' +
+      '</radialGradient></defs>' +
+      // forked tail
+      '<path d="M24 23 L4 9 L13 23 L4 37 Z" fill="' + color + '" opacity="0.85"/>' +
+      // narrow caudal peduncle
+      '<path d="M24 17 Q30 23 24 29 Q19 26 19 23 Q19 20 24 17 Z" fill="' + color + '" opacity="0.45"/>' +
+      // body
+      '<ellipse cx="51" cy="23" rx="27" ry="15" fill="url(#' + gid + ')"/>' +
+      // dorsal fin
+      '<path d="M37 8 Q50 2 62 9 L59 10 Q49 5 37 9 Z" fill="' + color + '" opacity="0.68"/>' +
+      // pectoral fin
+      '<path d="M52 30 Q60 38 54 37 Q47 34 52 30 Z" fill="' + color + '" opacity="0.56"/>' +
+      // eye
+      '<circle cx="68" cy="19" r="4" fill="#060e16" opacity="0.78"/>' +
+      '<circle cx="69" cy="18" r="1.5" fill="white" opacity="0.52"/>' +
+      // lateral line
+      '<path d="M42 19 Q55 17 66 20" stroke="' + color + '" stroke-width="0.9" stroke-opacity="0.30" fill="none"/>' +
+      '</svg>';
   }
 
-  // kid swimmer silhouettes (facing right): freestyle with recovery arm, or kickboard
+  // Realistic child swimmer: proper head/body, cap, arms, flutter kick
   function swimmerSvg(w, color, flip) {
-    const h = Math.round(w * 0.43);
-    const kickboard = Math.random() < 0.4;
-    const body = kickboard
-      ? // kickboard: head up, arms forward to the board, flutter kick
-        '<circle cx="50" cy="10" r="5.6"/>' +
-        '<path d="M54 13 C58 12 61 12 64 13" fill="none" stroke-width="4" stroke-linecap="round"/>' +
-        '<rect x="62" y="9.5" width="10" height="6" rx="3"/>' +
-        '<path d="M45 14 C38 17 31 17 25 16" fill="none" stroke-width="6.5" stroke-linecap="round"/>' +
-        '<path d="M25 15 C20 12 16 10 12 9" fill="none" stroke-width="5" stroke-linecap="round"/>' +
-        '<path d="M25 17 C20 20 16 23 12 25" fill="none" stroke-width="5" stroke-linecap="round"/>'
-      : // freestyle: lead arm reaching, recovery arm arched over the back, scissor kick
-        '<circle cx="52" cy="11" r="5.6"/>' +
-        '<path d="M56 14 C61 12 66 12 70 14" fill="none" stroke-width="4" stroke-linecap="round"/>' +
-        '<path d="M45 12 C41 4 34 2 28 6" fill="none" stroke-width="4" stroke-linecap="round"/>' +
-        '<path d="M47 14 C40 17 33 17 26 15" fill="none" stroke-width="6.5" stroke-linecap="round"/>' +
-        '<path d="M26 14 C21 11 17 9 13 8" fill="none" stroke-width="5" stroke-linecap="round"/>' +
-        '<path d="M26 16 C21 19 17 22 13 24" fill="none" stroke-width="5" stroke-linecap="round"/>';
-    const splash = '<circle cx="9" cy="11" r="1.8"/><circle cx="14" cy="6" r="1.4"/><circle cx="7" cy="18" r="1.4"/><circle cx="12" cy="22" r="1.2"/>';
-    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 74 32"' +
-      (flip ? ' style="transform: scaleX(-1);"' : '') +
-      '><g fill="' + color + '" stroke="' + color + '">' + body + splash + '</g></svg>';
+    const h = Math.round(w * 0.48);
+    const kickboard = Math.random() < 0.38;
+    if (kickboard) {
+      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 160 77"' +
+        (flip ? ' style="transform:scaleX(-1)"' : '') + '>' +
+        // flutter kick
+        '<path d="M38 44 Q28 50 18 56" stroke="' + color + '" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.88"/>' +
+        '<path d="M44 47 Q34 38 26 30" stroke="' + color + '" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.88"/>' +
+        // torso — thick stroke = mass
+        '<path d="M40 46 Q75 38 108 40 Q118 41 128 43" stroke="' + color + '" stroke-width="14" stroke-linecap="round" fill="none"/>' +
+        // neck
+        '<line x1="128" y1="43" x2="133" y2="40" stroke="' + color + '" stroke-width="8" stroke-linecap="round"/>' +
+        // head (child: big relative to body)
+        '<circle cx="142" cy="36" r="14" fill="' + color + '"/>' +
+        // swim cap highlight
+        '<path d="M130 27 Q142 21 154 27" stroke="white" stroke-width="3" stroke-opacity="0.28" fill="none" stroke-linecap="round"/>' +
+        // arms on board
+        '<path d="M128 42 Q136 43 146 42" stroke="' + color + '" stroke-width="8" stroke-linecap="round" fill="none"/>' +
+        // kickboard
+        '<rect x="144" y="37" width="16" height="9" rx="3.5" fill="' + color + '" opacity="0.72"/>' +
+        // splash
+        '<circle cx="14" cy="46" r="3" fill="' + color + '" opacity="0.55"/>' +
+        '<circle cx="22" cy="36" r="2.2" fill="' + color + '" opacity="0.45"/>' +
+        '<circle cx="10" cy="56" r="2.5" fill="' + color + '" opacity="0.45"/>' +
+        '</svg>';
+    } else {
+      return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 160 77"' +
+        (flip ? ' style="transform:scaleX(-1)"' : '') + '>' +
+        // flutter kick
+        '<path d="M38 46 Q28 54 18 60" stroke="' + color + '" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.88"/>' +
+        '<path d="M44 48 Q34 38 26 30" stroke="' + color + '" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.88"/>' +
+        // torso
+        '<path d="M40 47 Q75 40 110 42 Q120 43 130 46" stroke="' + color + '" stroke-width="14" stroke-linecap="round" fill="none"/>' +
+        '<line x1="130" y1="46" x2="135" y2="42" stroke="' + color + '" stroke-width="8" stroke-linecap="round"/>' +
+        // head
+        '<circle cx="144" cy="38" r="14" fill="' + color + '"/>' +
+        '<path d="M132 28 Q144 22 156 28" stroke="white" stroke-width="3" stroke-opacity="0.28" fill="none" stroke-linecap="round"/>' +
+        // lead arm extended
+        '<path d="M130 45 Q142 47 158 44" stroke="' + color + '" stroke-width="8" stroke-linecap="round" fill="none"/>' +
+        '<ellipse cx="158" cy="44" rx="7" ry="4.5" fill="' + color + '" opacity="0.82" transform="rotate(-8 158 44)"/>' +
+        // recovery arm arching over — the defining freestyle marker
+        '<path d="M118 40 Q130 24 138 28" stroke="' + color + '" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.82"/>' +
+        // splash
+        '<circle cx="14" cy="48" r="3" fill="' + color + '" opacity="0.55"/>' +
+        '<circle cx="22" cy="37" r="2.2" fill="' + color + '" opacity="0.45"/>' +
+        '<circle cx="10" cy="58" r="2.5" fill="' + color + '" opacity="0.45"/>' +
+        '<circle cx="28" cy="29" r="1.8" fill="' + color + '" opacity="0.38"/>' +
+        '</svg>';
+    }
   }
 
   function addScenery(el, opts) {
