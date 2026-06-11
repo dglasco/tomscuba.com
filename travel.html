@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dive Travel & Trips — Tom's Dive & Swim · Austin, TX</title>
+<meta name="description" content="Group dive trips to Cozumel, Bonaire, Roatán, Galápagos, and more. Led by Tom's instructors with the worry taken out of travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .trip-card {
+    background: rgba(245,237,224,0.04);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex; flex-direction: column;
+    text-decoration: none;
+  }
+  .trip-card:hover { transform: translateY(-4px); border-color: var(--coral); }
+  .trip-image {
+    aspect-ratio: 16/10;
+    position: relative; overflow: hidden;
+  }
+  .trip-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(4,16,26,0.6) 100%);
+  }
+  .trip-cozumel { background:
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 40%),
+    linear-gradient(160deg, #4caf99 0%, #1f6383 60%, #0a1f2e 100%); }
+  .trip-bonaire { background:
+    radial-gradient(ellipse at 70% 40%, rgba(240,179,74,0.2) 0%, transparent 50%),
+    linear-gradient(160deg, #5a9ba8 0%, #1f6383 50%, #143b56 100%); }
+  .trip-roatan { background:
+    radial-gradient(ellipse at 40% 50%, rgba(217,120,82,0.25) 0%, transparent 50%),
+    linear-gradient(160deg, #d97852 0%, #5a9ba8 60%, #143b56 100%); }
+  .trip-galapagos { background:
+    radial-gradient(ellipse at 60% 30%, rgba(240,220,180,0.15) 0%, transparent 50%),
+    linear-gradient(160deg, #143b56 0%, #04101a 70%, #000 100%); }
+  .trip-belize { background:
+    radial-gradient(ellipse at 50% 40%, rgba(76,175,153,0.25) 0%, transparent 50%),
+    linear-gradient(160deg, #5a9ba8 0%, #4caf99 50%, #1f6383 100%); }
+  .trip-fiji { background:
+    radial-gradient(ellipse at 50% 60%, rgba(217,120,82,0.2) 0%, transparent 50%),
+    linear-gradient(160deg, #1f6383 0%, #143b56 70%, #0a1f2e 100%); }
+  .trip-image .trip-meta {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--sand); color: var(--ink);
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600; z-index: 1;
+  }
+  .trip-image .trip-meta.sold { background: var(--coral); color: var(--paper); }
+  .trip-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; color: var(--sand); }
+  .trip-dest {
+    font-family: 'Fraunces', serif; font-weight: 400;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+    font-size: 26px; margin-bottom: 6px; letter-spacing: -0.02em;
+  }
+  .trip-dates {
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    opacity: 0.6; margin-bottom: 16px;
+  }
+  .trip-desc { font-size: 14px; opacity: 0.78; line-height: 1.6; flex-grow: 1; margin-bottom: 20px; }
+  .trip-foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-top: 1px solid var(--line); padding-top: 16px;
+  }
+  .trip-price {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+    font-size: 22px; color: var(--sun);
+  }
+  .trip-price span { font-size: 11px; opacity: 0.7; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; margin-left: 4px;}
+  .trip-cta {
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; color: var(--sand);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html">Dive</a>
+    <a href="travel.html" class="active">Travel</a>
+    <a href="club.html">Club</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="#trips" class="nav-cta">Browse Trips →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-coral with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">Dive travel · Group trips · 2025–2026</div>
+    <h1 class="hero-title">Some Saturdays<br>end with <em>salt on your skin.</em></h1>
+    <p class="hero-sub">Group dive trips, led by Tom's instructors, to the best diving in the world. Lodging, dive boats, transfers, breakfast, and the kind of company that makes the cab from the airport feel like part of the trip.</p>
+    <div class="hero-ctas">
+      <a href="#trips" class="btn btn-primary">See upcoming trips <span class="arrow">→</span></a>
+      <a href="club.html" class="btn btn-ghost">Get presale access</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Explore</span><div class="line"></div></div>
+</section>
+
+<!-- STRIP -->
+<div class="heritage-strip">
+  <span><span class="dot"></span>Led by Tom's instructors</span>
+  <span><span class="dot"></span>6 trips/year</span>
+  <span><span class="dot"></span>Beginner-friendly options</span>
+  <span><span class="dot"></span>Non-divers welcome</span>
+</div>
+
+<!-- WHY -->
+<section class="section warm">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow coral"><span class="num"><span>1</span></span> Why travel with Tom's</div>
+      <h2 class="h2">Worry-free <em>by design.</em></h2>
+    </div>
+    <p>Our travel leaders have been running these trips for 20+ years. We pre-negotiate everything — boats, accommodations, transfers, gear handling, surface intervals — so you can just dive. Whether it's your first big dive trip or your fifteenth.</p>
+  </div>
+
+  <div class="container">
+    <div class="card-grid-3" style="text-align: center;">
+      <div>
+        <div class="stat-num" style="font-size: 64px; color: var(--coral);">1</div>
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">One leader, all logistics</h3>
+        <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">A Tom's trip leader on every trip handling boats, schedules, and the inevitable hiccups.</p>
+      </div>
+      <div>
+        <div class="stat-num" style="font-size: 64px; color: var(--coral);">+1</div>
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Bring a non-diver</h3>
+        <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Spouse doesn't dive? We pick destinations where they'll have an incredible vacation too.</p>
+      </div>
+      <div>
+        <div class="stat-num" style="font-size: 64px; color: var(--coral);">∞</div>
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Bring the friends you'll keep</h3>
+        <p style="font-size: 14px; opacity: 0.7; line-height: 1.6;">Half the trips end with someone signing up for the next one. The community is half the experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRIPS -->
+<section class="section deep" id="trips">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>2</span></span> Upcoming trips</div>
+      <h2 class="h2"><em>Where</em> we're going next.</h2>
+      <p>Aquanauts members get presale access two weeks before public registration. Trips with limited spots sell out fast — get on the list early.</p>
+    </div>
+
+    <div class="card-grid-3">
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-cozumel">
+          <span class="trip-meta">A few spots</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Cozumel, Mexico</h3>
+          <div class="trip-dates">Sep 14 – 21, 2025 · 7 days</div>
+          <p class="trip-desc">The classic. Drift dives on Palancar reef, healthy coral, 80°+ water year-round. Beginner-friendly and instructor-led. Our most popular trip — we run it twice a year.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$2,495<span>/diver</span></span>
+            <span class="trip-cta">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-bonaire">
+          <span class="trip-meta">Open</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Bonaire</h3>
+          <div class="trip-dates">Oct 11 – 18, 2025 · 7 days</div>
+          <p class="trip-desc">Shore diving paradise. Unlimited tanks, drive your truck to 60+ dive sites, an underwater national park. Best for divers comfortable with self-directed diving.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$2,895<span>/diver</span></span>
+            <span class="trip-cta">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-roatan">
+          <span class="trip-meta">Open</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Roatán, Honduras</h3>
+          <div class="trip-dates">Nov 8 – 15, 2025 · 7 days</div>
+          <p class="trip-desc">Beginner-friendly walls, healthy reefs, dolphins on Anthony's Key. Great budget-friendly Caribbean week. Open Water-friendly.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$2,195<span>/diver</span></span>
+            <span class="trip-cta">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-belize">
+          <span class="trip-meta">Open</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Belize · Blue Hole</h3>
+          <div class="trip-dates">Feb 7 – 14, 2026 · 7 days</div>
+          <p class="trip-desc">The Great Blue Hole, plus the second-longest barrier reef in the world. Liveaboard option. Advanced + Nitrox recommended for the Blue Hole dives.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$3,495<span>/diver</span></span>
+            <span class="trip-cta">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-galapagos">
+          <span class="trip-meta sold">Waitlist</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Galápagos, Ecuador</h3>
+          <div class="trip-dates">Apr 18 – 28, 2026 · 10 days liveaboard</div>
+          <p class="trip-desc">Hammerheads, mantas, whale sharks (in season), Mola mola. Aggressor liveaboard. The bucket-list trip. Advanced + Nitrox required. Currents are real.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$6,895<span>/diver</span></span>
+            <span class="trip-cta">Join list →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://shop.tomsscuba.com/" class="trip-card">
+        <div class="trip-image trip-fiji">
+          <span class="trip-meta">Presale only</span>
+        </div>
+        <div class="trip-content">
+          <h3 class="trip-dest">Fiji</h3>
+          <div class="trip-dates">Aug 8 – 19, 2026 · 11 days</div>
+          <p class="trip-desc">Soft coral capital of the world. Beqa lagoon shark dive optional. Currently in Aquanauts presale — public registration opens July. Sign up to club for early access.</p>
+          <div class="trip-foot">
+            <span class="trip-price">$5,295<span>/diver</span></span>
+            <span class="trip-cta">Get presale →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section mid">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow sun"><span class="num"><span>3</span></span> What's included</div>
+        <h2 class="h2">What you're <em>actually paying</em> for.</h2>
+      </div>
+      <p>Every trip is different but the philosophy is the same: we book the things you'd book anyway, get them for less than you would, and bundle them so you don't think about logistics for a week. Specific inclusions are detailed in each trip package.</p>
+    </div>
+
+    <div class="card-grid-2">
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin-bottom: 16px;">Always included</h3>
+        <ul style="list-style: none;">
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">Lodging (typically dive resort or equivalent)</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">All boat-based diving (typically 2–3 tanks/day)</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">Daily breakfast at the resort</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">Airport pickup and dropoff</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">Tom's trip leader on the ground</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;">Group welcome dinner and farewell dinner</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 15px;">Dive marine park fees where applicable</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin-bottom: 16px;">Not included (typically)</h3>
+        <ul style="list-style: none;">
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">International airfare</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Travel insurance (strongly recommended)</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Most lunches and dinners</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Gear rental (we can arrange in advance)</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Nitrox fills (typically + $100–200/week)</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Crew gratuities</li>
+          <li style="padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 15px; opacity: 0.7;">Optional excursions (sharks, special dives)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section deep">
+  <div class="container-narrow">
+    <div class="testimonial" style="border-left-color: var(--coral);">
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="testimonial-quote">"I've done seven Tom's trips. The first one I was nervous — fresh open water cert, didn't know anyone. By dinner the first night, I had eight new friends. I've gone back with most of them every year since."</p>
+      <div class="testimonial-attr"><strong>David S.</strong> Aquanaut · 7 trips and counting</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section warm" style="text-align: center;">
+  <div class="container-narrow">
+    <h2 class="h2 mb-4">Pick a <em>blue</em> on the map.</h2>
+    <p class="lead" style="opacity: 0.78; max-width: 560px; margin: 0 auto 36px;">
+      Browse trips, talk to us about which one fits your level, and put down a deposit. Trip prices are based on double-occupancy room sharing — solo travelers welcome, we'll match you with a roommate or arrange a single.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://shop.tomsscuba.com/" class="btn btn-coral">Book a trip <span class="arrow">→</span></a>
+      <a href="club.html" class="btn btn-ghost-dark">Join Aquanauts for presale</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html#specialties">Specialty courses</a>
+      <a href="dive.html#calendar">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="shop.html">Shop & gear</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

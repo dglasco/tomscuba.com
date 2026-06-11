@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scuba Diving Courses — Tom's Dive & Swim · Austin, TX</title>
+<meta name="description" content="SSI scuba diving certification in Austin. Open Water, specialty courses (Nitrox, Wreck, Photography, Stress & Rescue), professional continuing education, and private classes. 70+ instructors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .calendar-list { display: grid; gap: 12px; }
+  .cal-row {
+    display: grid; grid-template-columns: 110px 1fr auto auto;
+    gap: 24px; padding: 20px 0;
+    border-top: 1px solid var(--line);
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .cal-row { grid-template-columns: 80px 1fr; gap: 12px; }
+    .cal-row .cal-status, .cal-row .cal-cta { grid-column: 2; justify-self: start; }
+  }
+  .cal-date {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+    font-size: 24px; line-height: 1;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    padding-right: 24px;
+  }
+  .cal-date small {
+    display: block; font-family: 'Manrope', sans-serif;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.5; margin-top: 4px;
+  }
+  .cal-info h4 {
+    font-family: 'Manrope', sans-serif; font-weight: 600;
+    font-size: 16px; margin-bottom: 4px;
+  }
+  .cal-info p { font-size: 13px; opacity: 0.7; }
+  .cal-status {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px;
+    border: 1px solid currentColor;
+    font-weight: 600;
+  }
+  .cal-status.open { color: #4caf50; }
+  .cal-status.few { color: var(--sun); }
+  .cal-status.full { color: var(--coral); opacity: 0.7; }
+  .cal-cta {
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; color: var(--sun);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .levels { position: relative; padding: 60px 0; }
+  .levels-line {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, var(--sun) 0%, var(--coral) 50%, var(--reef) 100%);
+  }
+  @media (max-width: 768px) { .levels-line { left: 20px; } }
+  .level {
+    display: grid; grid-template-columns: 1fr 60px 1fr; gap: 32px;
+    align-items: center; margin-bottom: 60px;
+  }
+  .level:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) {
+    .level { grid-template-columns: 50px 1fr; gap: 16px; }
+    .level .level-spacer { display: none; }
+  }
+  .level-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--sun); margin: 0 auto;
+    box-shadow: 0 0 0 4px var(--abyss), 0 0 0 5px var(--sun);
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 768px) { .level-dot { margin-left: 12px; } }
+  .level-content {
+    background: rgba(245,237,224,0.05);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .level:nth-child(odd) .level-content { text-align: right; }
+  @media (max-width: 768px) {
+    .level:nth-child(odd) .level-content { text-align: left; }
+    .level-content.right-on-desktop { order: 2; }
+  }
+  .level-num {
+    font-size: 13px; color: var(--sun); margin-bottom: 8px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 600; font-family: 'Manrope', sans-serif;
+  }
+  .level-content h4 {
+    font-family: 'Fraunces', serif; font-weight: 400;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+    font-size: 22px; margin-bottom: 8px;
+  }
+  .level-content p { font-size: 14px; opacity: 0.75; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html" class="active">Dive</a>
+    <a href="travel.html">Travel</a>
+    <a href="club.html">Club</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="#open-water" class="nav-cta">Start Diving →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-warm with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">SSI Certification · 70+ instructors</div>
+    <h1 class="hero-title">Your first <em>breath</em><br>underwater.</h1>
+    <p class="hero-sub">There's a moment, on every diver's first descent, when they exhale and realize the bubbles are the only sound. Tom's has put thousands of Austinites through that moment since 1982. You're next.</p>
+    <div class="hero-ctas">
+      <a href="#open-water" class="btn btn-primary">Start with Open Water <span class="arrow">→</span></a>
+      <a href="#calendar" class="btn btn-ghost">See class calendar</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Descend</span><div class="line"></div></div>
+</section>
+
+<!-- STRIP -->
+<div class="heritage-strip">
+  <span><span class="dot"></span>SSI Authorized Training Center</span>
+  <span><span class="dot"></span>15 specialty courses</span>
+  <span><span class="dot"></span>Pro continuing education</span>
+  <span><span class="dot"></span>Hundreds certified yearly</span>
+</div>
+
+<!-- THE LEVELS / PROGRESSION -->
+<section class="section deep">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>1</span></span> The diver's path</div>
+      <h2 class="h2">Five <em>fathoms</em> of training.<br>One depth at a time.</h2>
+      <p>Diving is sequential. You can't lead a wreck dive before you can hover. Tom's takes you through each level deliberately — most divers progress one cert per year, exactly when they're ready.</p>
+    </div>
+
+    <div class="container-narrow levels">
+      <div class="levels-line"></div>
+      <div class="level">
+        <div class="level-content right-on-desktop">
+          <div class="level-num">Level 1 · The start</div>
+          <h4>Open Water Diver</h4>
+          <p>Your first certification. Pool sessions in Austin, open water dives at our home lakes or in the Caribbean. The cert most divers ever need.</p>
+        </div>
+        <div class="level-dot"></div>
+        <div class="level-spacer"></div>
+      </div>
+      <div class="level">
+        <div class="level-spacer"></div>
+        <div class="level-dot"></div>
+        <div class="level-content">
+          <div class="level-num">Level 2 · Confidence</div>
+          <h4>Advanced & Specialties</h4>
+          <p>Perfect Buoyancy, Nitrox, Deep, Wreck, Photography. Stack the skills that turn certified divers into competent ones.</p>
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-content right-on-desktop">
+          <div class="level-num">Level 3 · Mastery</div>
+          <h4>Stress & Rescue</h4>
+          <p>The course every serious diver should take. Manage your own stress, recognize it in others, respond when it matters.</p>
+        </div>
+        <div class="level-dot"></div>
+        <div class="level-spacer"></div>
+      </div>
+      <div class="level">
+        <div class="level-spacer"></div>
+        <div class="level-dot"></div>
+        <div class="level-content">
+          <div class="level-num">Level 4 · Leadership</div>
+          <h4>Divemaster</h4>
+          <p>The first professional rating. Assist on courses, lead certified divers, work the boat. Where the journey gets serious.</p>
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-content right-on-desktop">
+          <div class="level-num">Level 5 · Teach</div>
+          <h4>Instructor & beyond</h4>
+          <p>Become the person who puts new divers in the water. Tom's has produced more dive professionals than anyone in Central Texas.</p>
+        </div>
+        <div class="level-dot"></div>
+        <div class="level-spacer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE COURSES -->
+<section class="section warm" id="open-water">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow coral"><span class="num"><span>2</span></span> Start here</div>
+      <h2 class="h2">Begin your diving life.</h2>
+    </div>
+    <p>Open Water is the start. Refresher is for divers returning after time away. Both run year-round. Pool sessions happen in our 91° indoor pool, open water dives are scheduled at Lake Travis, Blue Lagoon, or a Caribbean trip.</p>
+  </div>
+
+  <div class="container">
+    <div class="card-grid-2">
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Beginner · 4 weekends</div>
+        <h3>SSI Open Water Diver</h3>
+        <p>The most thrilling certification course we teach. Includes online learning, four pool sessions in our 91° indoor pool, and four open water dives at our local lakes or as part of a trip. Graduate as a certified diver, qualified to dive worldwide.</p>
+        <div class="course-meta">
+          <span>Ages 10+</span><span>$$$</span><span>SSI cert</span>
+        </div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Returning divers · 1 day</div>
+        <h3>Scuba Refresher</h3>
+        <p>For certified divers who haven't been in the water in a year or more. One pool session covering critical skills, equipment review, and confidence-building. Required by most resorts before you can dive abroad.</p>
+        <div class="course-meta">
+          <span>Cert required</span><span>$</span><span>Half day</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="section deep" id="specialties">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>3</span></span> Build your skills</div>
+      <h2 class="h2"><em>Specialty</em> courses.</h2>
+      <p>Each one stacks. Take five and you've earned the Advanced Open Water rating. Take more, become a master diver. Most can be completed in a weekend.</p>
+    </div>
+
+    <div class="card-grid-3">
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Perfect Buoyancy</h3>
+        <p>The single most transformative skill in diving. Stop kicking up silt, breathe through your tank slower, and look like you've been diving for a decade.</p>
+        <div class="course-meta"><span>1 day</span><span>2 pool dives</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Enriched Air Nitrox</h3>
+        <p>Dive longer, surface fresher. Nitrox is the most-used specialty in the world — for good reason. Online + practical session.</p>
+        <div class="course-meta"><span>Half day</span><span>No dives required</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty · safety</div>
+        <h3>Stress & Rescue</h3>
+        <p>The course that makes you a better dive buddy. Recognize, prevent, and manage stress. The most rewarding course we teach.</p>
+        <div class="course-meta"><span>3 days</span><span>4 dives</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Underwater Photography</h3>
+        <p>Lighting, framing, post — the whole pipeline. Bring your housing or use ours. Co-taught by professional underwater photographers.</p>
+        <div class="course-meta"><span>1 day</span><span>2 dives</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Wreck Diving</h3>
+        <p>Penetration limits, line work, hazard awareness. Texas has more wrecks within reach than you'd think.</p>
+        <div class="course-meta"><span>2 days</span><span>4 dives</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Equipment Techniques</h3>
+        <p>O-rings, hose swaps, regulator basics, predive checks. Become the diver who fixes their own gear at the boat.</p>
+        <div class="course-meta"><span>1 day</span><span>Classroom + workshop</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty</div>
+        <h3>Search & Recovery</h3>
+        <p>Lift bags, search patterns, lost-object recovery. A favorite of public safety divers and divers who lose rings.</p>
+        <div class="course-meta"><span>1 day</span><span>2 dives</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty · safety</div>
+        <h3>First Aid CPR with AED</h3>
+        <p>Above the water. Required for several pro ratings, valuable for any diver. Co-taught with current emergency medical providers.</p>
+        <div class="course-meta"><span>1 day</span><span>Classroom</span></div>
+      </a>
+      <a href="https://shop.tomsscuba.com/" class="course-card">
+        <div class="course-tag">Specialty · safety</div>
+        <h3>Oxygen Provider</h3>
+        <p>How to deliver emergency O₂ to an injured diver. Pairs with First Aid CPR. The most important class no diver wants to use.</p>
+        <div class="course-meta"><span>Half day</span><span>Classroom</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRO -->
+<section class="section mid" id="pro">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow sun"><span class="num"><span>4</span></span> Go pro</div>
+        <h2 class="h2">Become a <em>dive professional.</em></h2>
+      </div>
+      <p>Many of the instructors at Tom's started exactly where you are. Our continuing education program produces real working professionals — Divemasters, Assistant Instructors, and Instructors who work boats, lead courses, and run dive operations all over the world.</p>
+    </div>
+
+    <div class="card-grid-3">
+      <a href="contact.html" class="course-card">
+        <div class="course-tag">Pro · entry</div>
+        <h3>Divemaster</h3>
+        <p>The first pro rating. Assist on courses, lead certified dives, work boats. Includes mentored work hours at Tom's.</p>
+        <div class="course-meta"><span>3–6 months</span><span>Intensive</span></div>
+      </a>
+      <a href="contact.html" class="course-card">
+        <div class="course-tag">Pro · teach</div>
+        <h3>Assistant Instructor</h3>
+        <p>The bridge between Divemaster and Instructor. Teach select sections under instructor supervision. Required step toward full Instructor.</p>
+        <div class="course-meta"><span>1–2 months</span><span>Co-teaching</span></div>
+      </a>
+      <a href="contact.html" class="course-card">
+        <div class="course-tag">Pro · teach</div>
+        <h3>Open Water Instructor</h3>
+        <p>Certify new divers, run your own courses, work anywhere in the world. The dream job people don't believe is real until they live it.</p>
+        <div class="course-meta"><span>IDC + IE</span><span>2 weeks intensive</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUAL & PRIVATE -->
+<section class="section warm">
+  <div class="container">
+    <div class="card-grid-2">
+      <div style="padding: 36px; background: var(--paper); border: 1px solid var(--line-d); border-radius: 4px;">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Online · self-paced</div>
+        <h3 style="font-size: 28px; font-weight: 400; font-variation-settings: 'opsz' 80, 'SOFT' 50; margin-bottom: 14px;">Virtual Classes</h3>
+        <p style="opacity: 0.78; line-height: 1.6; margin-bottom: 24px;">Most SSI academic work can be completed online before you arrive at the shop. Watch videos, take quizzes, finish the theory. Then come do the fun part — the pool and the water — with us.</p>
+        <a href="contact.html" class="btn btn-ghost-dark">Learn about virtual learning →</a>
+      </div>
+      <div style="padding: 36px; background: var(--paper); border: 1px solid var(--line-d); border-radius: 4px;">
+        <div class="course-tag" style="color: var(--coral); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">Custom · your schedule</div>
+        <h3 style="font-size: 28px; font-weight: 400; font-variation-settings: 'opsz' 80, 'SOFT' 50; margin-bottom: 14px;">Private Class Request</h3>
+        <p style="opacity: 0.78; line-height: 1.6; margin-bottom: 24px;">Have a corporate group? A family of five? A wedding party that wants to dive Cozumel together? We can build a private course on your schedule, at your pace, with the certifications you need.</p>
+        <a href="contact.html" class="btn btn-coral">Request a private class →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="section deep" id="calendar">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>5</span></span> Dive calendar</div>
+      <h2 class="h2">Upcoming <em>classes & dives.</em></h2>
+      <p>Live class openings, refresher sessions, and local dive days. Click any session to reserve a spot in our online store.</p>
+    </div>
+
+    <div class="container-narrow calendar-list">
+      <div class="cal-row">
+        <div class="cal-date">Jun 7<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Open Water — Pool Session 1</h4>
+          <p>5909 Burnet Rd · 9am – 1pm · Instructor: Andrew P.</p>
+        </div>
+        <div class="cal-status open">Open</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Reserve →</a>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Jun 14<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Perfect Buoyancy Specialty</h4>
+          <p>5909 Burnet Rd · 10am – 4pm · Instructor: Sarah L.</p>
+        </div>
+        <div class="cal-status few">3 left</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Reserve →</a>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Jun 21<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Open Water Checkout — Lake Travis</h4>
+          <p>Mansfield Dam Park · 8am – 5pm · Open water dives 1 & 2</p>
+        </div>
+        <div class="cal-status full">Waitlist</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Join list →</a>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Jul 12<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Nitrox Specialty</h4>
+          <p>5909 Burnet Rd · 9am – 1pm · Online prework required</p>
+        </div>
+        <div class="cal-status open">Open</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Reserve →</a>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Jul 19<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Refresher Course</h4>
+          <p>5909 Burnet Rd · 10am – 1pm · For certified divers returning to water</p>
+        </div>
+        <div class="cal-status open">Open</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Reserve →</a>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Aug 2<small>Sat</small></div>
+        <div class="cal-info">
+          <h4>Stress & Rescue (Day 1 of 3)</h4>
+          <p>5909 Burnet Rd · 9am – 5pm · Continues Aug 9 & 16</p>
+        </div>
+        <div class="cal-status few">2 left</div>
+        <a href="https://shop.tomsscuba.com/" class="cal-cta">Reserve →</a>
+      </div>
+    </div>
+
+    <p class="text-center mt-5" style="opacity: 0.5; font-size: 13px;">
+      Sample calendar shown. Live availability confirmed at booking. Call (512) 451-3425 for full schedule.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section warm" style="text-align: center;">
+  <div class="container-narrow">
+    <h2 class="h2 mb-4">Not sure where <em>to start?</em></h2>
+    <p class="lead" style="opacity: 0.78; max-width: 560px; margin: 0 auto 36px;">
+      Most people overthink it. The answer is almost always: Open Water. Talk to us — we'll get you into a pool in two weekends and a certified diver in four.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://shop.tomsscuba.com/" class="btn btn-coral">Start Open Water <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-ghost-dark">Call (512) 451-3425</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+      <a href="swim.html">Adult lessons</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html#specialties">Specialty courses</a>
+      <a href="dive.html#pro">Pro education</a>
+      <a href="dive.html#calendar">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="shop.html">Shop & gear</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

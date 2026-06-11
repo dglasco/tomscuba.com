@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tom's Dive & Swim — Austin's Water People Since 1982</title>
+<meta name="description" content="Austin's family-owned swim school and dive shop since 1982. Swim lessons from 6 months to adult, SSI scuba certification, dive trips, and the Austin Aquanauts dive club.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .heritage-light {
+    background: linear-gradient(180deg, var(--paper) 0%, #1a4763 100%);
+    padding: 140px 32px 120px;
+    position: relative; overflow: hidden;
+  }
+  .heritage-light h2 {
+    font-size: clamp(40px, 6vw, 78px);
+    color: var(--ink);
+    margin-bottom: 80px;
+    max-width: 900px;
+  }
+  .heritage-light h2 em { color: var(--coral); }
+  .heritage-light .stat-num { color: var(--ink); }
+  .heritage-light .stat-label { color: var(--ink); }
+
+  .depth-map { position: relative; padding-left: 60px; }
+  @media (max-width: 768px) { .depth-map { padding-left: 40px; } }
+  .depth-line {
+    position: absolute; left: 20px; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(180deg, var(--sun), var(--coral) 50%, var(--reef));
+  }
+  .depth-line::before, .depth-line::after {
+    content: ''; position: absolute; left: -3px; width: 7px; height: 7px;
+    border-radius: 50%; background: var(--sand);
+  }
+  .depth-line::before { top: -4px; } .depth-line::after { bottom: -4px; }
+
+  .depth-marker {
+    position: relative; padding-bottom: 60px;
+    display: grid; grid-template-columns: 100px 1fr; gap: 32px;
+  }
+  @media (max-width: 768px) { .depth-marker { grid-template-columns: 1fr; gap: 8px; padding-bottom: 40px; } }
+  .depth-marker::before {
+    content: ''; position: absolute; left: -47px; top: 8px;
+    width: 13px; height: 13px; border-radius: 50%;
+    background: var(--sand); border: 3px solid #1a4763;
+    box-shadow: 0 0 0 1px var(--sand);
+  }
+  @media (max-width: 768px) { .depth-marker::before { left: -27px; } }
+  .depth-meta {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+    font-size: 15px; color: var(--sun); opacity: 0.9; padding-top: 6px;
+  }
+  .depth-content h3 {
+    font-family: 'Fraunces', serif; font-weight: 400;
+    font-variation-settings: "opsz" 60, "SOFT" 50;
+    font-size: 26px; margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .depth-content p { font-size: 15px; opacity: 0.8; line-height: 1.6; max-width: 540px; }
+
+  .community-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  @media (max-width: 968px) { .community-inner { grid-template-columns: 1fr; gap: 48px; } }
+  .community-text p { font-size: 17px; opacity: 0.85; line-height: 1.7; margin-bottom: 20px; max-width: 500px; }
+  .community-features {
+    list-style: none; margin-top: 32px;
+    display: grid; gap: 12px;
+  }
+  .community-features li {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 15px; opacity: 0.9;
+  }
+  .community-features li::before {
+    content: '~'; color: var(--sun);
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 22px;
+  }
+  .review-source {
+    margin-top: 36px; padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex; gap: 28px; flex-wrap: wrap;
+    font-size: 13px; opacity: 0.7;
+  }
+  .review-source span strong { display: block; color: var(--sun); font-size: 18px; font-family: 'Fraunces', serif; margin-bottom: 2px; }
+
+  .final-cta {
+    background: var(--abyss); color: var(--sand);
+    padding: 140px 32px 80px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .final-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(240,179,74,0.15) 0%, transparent 60%);
+  }
+  .final-cta-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+  .final-cta h2 {
+    font-size: clamp(40px, 6vw, 76px); line-height: 1.0;
+    letter-spacing: -0.03em; margin-bottom: 36px;
+  }
+  .final-cta h2 em { color: var(--sun); }
+  .final-cta-sub { font-size: 18px; opacity: 0.8; margin-bottom: 48px; max-width: 540px; margin-inline: auto; line-height: 1.6; }
+  .final-ctas {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html">Dive</a>
+    <a href="travel.html">Travel</a>
+    <a href="club.html">Club</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="swim.html" class="nav-cta">Book a Class →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-deep with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">Austin, Texas · Family-owned since 1982</div>
+    <h1 class="hero-title">Every great diver<br>was once a <em>brave swimmer.</em></h1>
+    <p class="hero-sub">A 90° indoor pool, a full dive shop, and 70+ instructors under one roof. Whether you're teaching a 6-month-old to float or planning your first dive in Cozumel — this is where Austin begins in the water.</p>
+    <div class="hero-ctas">
+      <a href="#paths" class="btn btn-primary">Find your path <span class="arrow">→</span></a>
+      <a href="shop.html" class="btn btn-ghost">Visit the shop</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Descend</span><div class="line"></div></div>
+</section>
+
+<!-- HERITAGE STRIP -->
+<div class="heritage-strip">
+  <span><span class="dot"></span>SSI Certified</span>
+  <span><span class="dot"></span>5909 Burnet Rd · Austin</span>
+  <span><span class="dot"></span>96% recommend</span>
+  <span><span class="dot"></span>40+ years</span>
+</div>
+
+<!-- THREE PATHS -->
+<section class="section warm" id="paths">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow coral"><span class="num"><span>1</span></span> Three doors, one ocean</div>
+      <h2 class="h2">Where will the water<br>take you <em>this year?</em></h2>
+    </div>
+    <p>Some come to keep their kids safe. Some come to chase a lifelong dream. And some come because they already know — the best Saturdays end with salt on your skin. Pick the door that feels like yours.</p>
+  </div>
+
+  <div class="container">
+    <div class="card-grid-3">
+      <a href="swim.html" class="path-card path-1">
+        <div class="path-bg"></div>
+        <div class="path-content">
+          <div class="path-tag"><span class="step">01</span> For families</div>
+          <div>
+            <h3 class="path-title">Their first <em>splash.</em></h3>
+            <p class="path-desc">Group and private swim lessons from 6 months through adult. SSI curriculum, 91° heated pool, instructors who actually remember your kid's name.</p>
+            <span class="path-cta">See swim lessons →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="dive.html" class="path-card path-2">
+        <div class="path-bg"></div>
+        <div class="path-content">
+          <div class="path-tag"><span class="step">02</span> For the curious</div>
+          <div>
+            <h3 class="path-title">Your first <em>breath</em> underwater.</h3>
+            <p class="path-desc">Get scuba certified in weeks. Pool sessions here in Austin, open water at our home lakes or in the Caribbean. Small classes. Patient instructors.</p>
+            <span class="path-cta">Learn to dive →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="travel.html" class="path-card path-3">
+        <div class="path-bg"></div>
+        <div class="path-content">
+          <div class="path-tag"><span class="step">03</span> For certified divers</div>
+          <div>
+            <h3 class="path-title">The next <em>blue.</em></h3>
+            <p class="path-desc">Gear, advanced specialties, the Austin Aquanauts dive club, and group trips to Cozumel, Bonaire, Roatán. Your community is already here.</p>
+            <span class="path-cta">Explore travel & gear →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage-light">
+  <div class="container">
+    <h2 class="h2">Forty-three years. One <em>family.</em> One pool. One block on Burnet Road.</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">1982</div>
+        <div class="stat-label">Family-owned since. We've taught Austin parents who now bring their grandkids.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">70<sup>+</sup></div>
+        <div class="stat-label">Dive instructors and swim coaches. The deepest bench in Central Texas.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">91°</div>
+        <div class="stat-label">Indoor pool, year-round. Operated by a certified pool operator on staff.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4500<sup>sq ft</sup></div>
+        <div class="stat-label">Of full-service shop: gear, rentals, repair, air & nitrox fills, retail.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE JOURNEY -->
+<section class="section mid">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>2</span></span> The Tom's journey</div>
+      <h2 class="h2">One pool. <em>A lifetime</em> of water.</h2>
+      <p>Most shops sell you a class. Tom's grows with you. Here's what the next ten years can look like, if you let them.</p>
+    </div>
+
+    <div class="depth-map">
+      <div class="depth-line"></div>
+      <div class="depth-marker">
+        <div class="depth-meta">Year 1, 6 mo+</div>
+        <div class="depth-content">
+          <h3>Parent & child class</h3>
+          <p>Your first time in our 91° pool. Floating, splashing, building trust. The earliest step on the longest journey.</p>
+        </div>
+      </div>
+      <div class="depth-marker">
+        <div class="depth-meta">Ages 4–12</div>
+        <div class="depth-content">
+          <h3>Stroke development & summer camps</h3>
+          <p>Group classes, SSI curriculum, small groups. Confidence becomes a stroke becomes a swimmer.</p>
+        </div>
+      </div>
+      <div class="depth-marker">
+        <div class="depth-meta">Ages 10+</div>
+        <div class="depth-content">
+          <h3>SSI Open Water certification</h3>
+          <p>The moment you exhale and watch the bubbles rise. Pool sessions in Austin, open water at Lake Travis or Cozumel.</p>
+        </div>
+      </div>
+      <div class="depth-marker">
+        <div class="depth-meta">Year 2+</div>
+        <div class="depth-content">
+          <h3>Specialties: Nitrox, photography, wrecks</h3>
+          <p>Perfect Buoyancy. Stress & Rescue. Underwater Photography. The shape of the diver you're becoming.</p>
+        </div>
+      </div>
+      <div class="depth-marker">
+        <div class="depth-meta">Year 3+</div>
+        <div class="depth-content">
+          <h3>Austin Aquanauts & global travel</h3>
+          <p>Monthly socials, statewide dives, and group trips to Bonaire, Roatán, Galápagos. The community you didn't know you were looking for.</p>
+        </div>
+      </div>
+      <div class="depth-marker" style="padding-bottom: 0;">
+        <div class="depth-meta">Year 5+</div>
+        <div class="depth-content">
+          <h3>Divemaster & beyond</h3>
+          <p>For some, the journey loops back. They start teaching. Tom's has put more dive professionals in the water than anyone in Central Texas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section dark">
+  <div class="community-inner">
+    <div class="community-text">
+      <div class="eyebrow coral"><span class="num"><span>3</span></span> The Austin Aquanauts</div>
+      <h2 class="h2">You don't just leave with a card.<br>You leave with a <em>crew.</em></h2>
+      <p>Founded in 2013, the Aquanauts is Austin's original dive club, born and based out of Tom's. Monthly social nights. Local dives at Lake Travis, Lake Buchanan, and Blue Lagoon. Statewide expeditions. And first call on every international trip we lead.</p>
+      <ul class="community-features">
+        <li>Member discounts on courses, gear, and air fills</li>
+        <li>Early access to trip registration</li>
+        <li>Monthly socials & exclusive presale events</li>
+        <li>A WhatsApp group that's planning a dive trip right now</li>
+      </ul>
+      <a href="club.html" class="btn btn-coral mt-5">Join the Aquanauts <span class="arrow">→</span></a>
+    </div>
+
+    <div>
+      <div class="testimonial">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="testimonial-quote">"Tom's taught my daughter to swim at 9 months. Eleven years later, she just got her open water cert in their pool. Same shop. Same families. Same warm water."</p>
+        <div class="testimonial-attr"><strong>Maria L.</strong> Austin parent · diver since 2019</div>
+      </div>
+      <div class="review-source">
+        <span><strong>96%</strong>Recommend on Facebook</span>
+        <span><strong>4.7★</strong>81 reviews on Yelp</span>
+        <span><strong>1982</strong>Year established</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Come get <em>wet.</em></h2>
+    <p class="final-cta-sub">Walk in any weekday between 10am and 6:30pm. Or book online — your first swim lesson, your first scuba class, or just a tank fill. Whatever brings you to the water, we'll meet you there.</p>
+    <div class="final-ctas">
+      <a href="swim.html" class="btn btn-primary">Book swim lessons <span class="arrow">→</span></a>
+      <a href="dive.html" class="btn btn-ghost">Start scuba certification</a>
+    </div>
+    <p style="font-size: 13px; opacity: 0.5; letter-spacing: 0.15em; text-transform: uppercase;">5909 Burnet Rd · Austin, TX · (512) 451-3425</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+      <a href="swim.html">Adult lessons</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html">Specialty courses</a>
+      <a href="dive.html">Refresher</a>
+      <a href="dive.html">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="shop.html">Shop & gear</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="about.html#team">Meet the team</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

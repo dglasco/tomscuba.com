@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Austin Aquanauts Dive Club — Tom's Dive & Swim</title>
+<meta name="description" content="Austin's original scuba dive club, founded in 2013, based at Tom's Dive & Swim. Monthly socials, local dives, statewide expeditions, and presale access to international trips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .benefit {
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: 24px; padding: 28px 0;
+    border-top: 1px solid var(--line-d);
+  }
+  .benefit:last-child { border-bottom: 1px solid var(--line-d); }
+  .benefit-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: 36px; color: var(--coral);
+    line-height: 1;
+  }
+  .benefit h3 {
+    font-size: 22px; font-weight: 400; margin-bottom: 8px;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+  }
+  .benefit p { font-size: 15px; opacity: 0.78; line-height: 1.6; }
+
+  .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 768px) { .tier-grid { grid-template-columns: 1fr; } }
+  .tier-card {
+    background: rgba(245,237,224,0.04);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 40px;
+    position: relative;
+  }
+  .tier-card.featured {
+    border-color: var(--sun);
+    background: linear-gradient(180deg, rgba(245,237,224,0.06) 0%, rgba(240,179,74,0.08) 100%);
+  }
+  .tier-card.featured::before {
+    content: 'Most popular';
+    position: absolute; top: -12px; left: 40px;
+    background: var(--sun); color: var(--ink);
+    padding: 4px 14px; border-radius: 999px;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tier-name {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: 28px; font-weight: 300;
+    margin-bottom: 6px;
+  }
+  .tier-price {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+    font-size: 56px; line-height: 1;
+    margin: 16px 0;
+    letter-spacing: -0.03em; font-weight: 300;
+  }
+  .tier-price sup { font-size: 0.3em; vertical-align: top; opacity: 0.6; }
+  .tier-price span { font-size: 0.3em; opacity: 0.6; font-style: italic; }
+  .tier-features { list-style: none; margin-top: 24px; }
+  .tier-features li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .tier-features li::before { content: '✓'; color: var(--sun); font-weight: 600; }
+
+  .event-row {
+    display: grid; grid-template-columns: 110px 1fr auto;
+    gap: 24px; padding: 20px 0;
+    border-top: 1px solid var(--line);
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .event-row { grid-template-columns: 80px 1fr; gap: 12px; }
+    .event-row .event-rsvp { grid-column: 2; justify-self: start; margin-top: 8px; }
+  }
+  .event-date {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+    font-size: 24px; line-height: 1;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    padding-right: 24px;
+  }
+  .event-date small {
+    display: block; font-family: 'Manrope', sans-serif;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    opacity: 0.5; margin-top: 4px;
+  }
+  .event-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px;
+    font-family: 'Manrope', sans-serif; }
+  .event-info p { font-size: 13px; opacity: 0.7; }
+  .event-rsvp { font-size: 13px; font-weight: 600; color: var(--sun); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="nav">
+  <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+  <button class="menu-toggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="swim.html">Swim</a>
+    <a href="dive.html">Dive</a>
+    <a href="travel.html">Travel</a>
+    <a href="club.html" class="active">Club</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="#join" class="nav-cta">Join Aquanauts →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-deep with-bubbles">
+  <div class="hero-content">
+    <div class="hero-eyebrow dash">Austin's original dive club · Founded 2013</div>
+    <h1 class="hero-title">The <em>Austin Aquanauts.</em></h1>
+    <p class="hero-sub">You don't just leave with a card. You leave with a crew. Local dives, monthly socials, statewide expeditions, and first call on every international trip we lead. Built and based at Tom's since 2013.</p>
+    <div class="hero-ctas">
+      <a href="#join" class="btn btn-primary">Join the club <span class="arrow">→</span></a>
+      <a href="#events" class="btn btn-ghost">See upcoming events</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>The Crew</span><div class="line"></div></div>
+</section>
+
+<!-- STRIP -->
+<div class="heritage-strip">
+  <span><span class="dot"></span>200+ active members</span>
+  <span><span class="dot"></span>Monthly socials</span>
+  <span><span class="dot"></span>Quarterly local dives</span>
+  <span><span class="dot"></span>Aquanauts WhatsApp</span>
+</div>
+
+<!-- INTRO -->
+<section class="section warm">
+  <div class="container-narrow text-center">
+    <div class="eyebrow coral" style="justify-content:center; display:inline-flex;"><span class="num"><span>1</span></span> The story</div>
+    <h2 class="h2 mb-4">Three Tom's regulars,<br>twelve <em>years ago.</em></h2>
+    <p class="lead" style="opacity: 0.78; max-width: 620px; margin: 0 auto;">
+      In 2013, a few of Tom's most loyal divers got tired of trying to coordinate local dives by group text.
+      They started a club. Twelve years later, the Austin Aquanauts is 200+ members strong — a real community
+      with monthly socials, exclusive trips, and the kind of people who'll meet you at 5am to drive to Lake Travis.
+    </p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow coral"><span class="num"><span>2</span></span> Member benefits</div>
+      <h2 class="h2">What you get<br>when you <em>join.</em></h2>
+    </div>
+    <p>Membership pays for itself within a year, usually faster if you take a course or go on a trip. But the discounts aren't the point — the community is. That part doesn't have a price tag.</p>
+  </div>
+
+  <div class="container-narrow">
+    <div class="benefit">
+      <div class="benefit-num">i</div>
+      <div>
+        <h3>Member pricing on courses and gear</h3>
+        <p>10% off all SSI courses and specialty classes. 10% off most retail gear in the shop (excludes already-discounted items and a few brand exclusions).</p>
+      </div>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">ii</div>
+      <div>
+        <h3>Free air fills</h3>
+        <p>Members get free standard air fills on the day of each club dive. Nitrox fills at a discounted member rate.</p>
+      </div>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">iii</div>
+      <div>
+        <h3>Presale on international trips</h3>
+        <p>Aquanauts get access to trip registration two weeks before the public. Our most popular trips (Cozumel, Galápagos, Fiji) often sell out during presale.</p>
+      </div>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">iv</div>
+      <div>
+        <h3>Monthly socials</h3>
+        <p>Last Friday of every month, at Tom's or a rotating Austin venue. Photo nights, trip recaps, gear demos, guest presentations, and the world's best dive stories.</p>
+      </div>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">v</div>
+      <div>
+        <h3>Local dive days</h3>
+        <p>Quarterly group dives at Lake Travis, Lake Buchanan, Blue Lagoon, and Athens Scuba Park. Air fills included. Bring your own gear or rent at member rates.</p>
+      </div>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">vi</div>
+      <div>
+        <h3>The WhatsApp group</h3>
+        <p>The single most useful benefit, hands down. Trip pickup buddies, gear recommendations, dive-buddy matching, and a steady stream of underwater photos that will make you book your next trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="section dark" id="join">
+  <div class="container">
+    <div class="section-head-center">
+      <div class="eyebrow sun"><span class="num"><span>3</span></span> Membership</div>
+      <h2 class="h2">Pick your <em>tier.</em></h2>
+      <p>Two simple options. Both include everything above. Family covers up to four certified divers in the same household.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Individual</div>
+        <p style="opacity: 0.7; font-size: 14px;">For solo divers</p>
+        <div class="tier-price">$<span style="font-style: normal;">100</span><span>/year</span></div>
+        <ul class="tier-features">
+          <li>One certified diver</li>
+          <li>10% off courses & gear</li>
+          <li>Free air fills on club dive days</li>
+          <li>Presale trip access</li>
+          <li>Monthly socials & WhatsApp</li>
+          <li>Local dive day participation</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost mt-4" style="width: 100%; justify-content: center;">Join individual →</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-name">Family</div>
+        <p style="opacity: 0.7; font-size: 14px;">Up to four certified divers, same household</p>
+        <div class="tier-price">$<span style="font-style: normal;">160</span><span>/year</span></div>
+        <ul class="tier-features">
+          <li>Up to 4 certified divers</li>
+          <li>10% off courses & gear (all members)</li>
+          <li>Free air fills on club dive days</li>
+          <li>Presale trip access for all members</li>
+          <li>Monthly socials & WhatsApp</li>
+          <li>One free local dive day per year</li>
+          <li>Kids under 18 dive at 50% off classes</li>
+        </ul>
+        <a href="contact.html" class="btn btn-coral mt-4" style="width: 100%; justify-content: center;">Join family →</a>
+      </div>
+    </div>
+
+    <p class="text-center mt-5" style="opacity: 0.6; font-size: 13px;">
+      Annual membership runs from join date. Pricing shown for reference — verified at signup. Aquanauts is open to all certified divers (any agency) and divers actively enrolled in Open Water.
+    </p>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section deep" id="events">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow sun"><span class="num"><span>4</span></span> Upcoming events</div>
+        <h2 class="h2">What's <em>happening next.</em></h2>
+      </div>
+      <p>Members get full event details and RSVP through our WhatsApp group and email list. Non-members are welcome at one social per year — come check us out.</p>
+    </div>
+
+    <div class="container-narrow">
+      <div class="event-row">
+        <div class="event-date">Jun 27<small>Fri</small></div>
+        <div class="event-info">
+          <h4>Monthly Social — Trip recap: Cozumel</h4>
+          <p>Tom's shop · 7pm · Photos, stories, beer. Bring something to share.</p>
+        </div>
+        <a href="contact.html" class="event-rsvp">RSVP →</a>
+      </div>
+      <div class="event-row">
+        <div class="event-date">Jul 12<small>Sat</small></div>
+        <div class="event-info">
+          <h4>Local Dive Day — Lake Travis</h4>
+          <p>Mansfield Dam Park · 8am · 2 tanks, free fills for members</p>
+        </div>
+        <a href="contact.html" class="event-rsvp">RSVP →</a>
+      </div>
+      <div class="event-row">
+        <div class="event-date">Jul 25<small>Fri</small></div>
+        <div class="event-info">
+          <h4>Monthly Social — Photo night</h4>
+          <p>Tom's shop · 7pm · Bring your best 5 photos from the past year</p>
+        </div>
+        <a href="contact.html" class="event-rsvp">RSVP →</a>
+      </div>
+      <div class="event-row">
+        <div class="event-date">Aug 16<small>Sat</small></div>
+        <div class="event-info">
+          <h4>Local Dive Day — Blue Lagoon, Huntsville</h4>
+          <p>Huntsville, TX · Road trip from shop · 7am departure</p>
+        </div>
+        <a href="contact.html" class="event-rsvp">RSVP →</a>
+      </div>
+      <div class="event-row">
+        <div class="event-date">Aug 29<small>Fri</small></div>
+        <div class="event-info">
+          <h4>Monthly Social — Gear demo night</h4>
+          <p>Tom's shop · 7pm · Try the latest BCDs, regs, and computers</p>
+        </div>
+        <a href="contact.html" class="event-rsvp">RSVP →</a>
+      </div>
+      <div class="event-row">
+        <div class="event-date">Sep 14<small>Sun</small></div>
+        <div class="event-info">
+          <h4>Cozumel Group Trip Departs (Members Only)</h4>
+          <p>Aquanauts trip · Sep 14–21 · Sold out</p>
+        </div>
+        <span class="event-rsvp" style="color: var(--coral); opacity: 0.7;">Sold out</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section warm" style="text-align: center;">
+  <div class="container-narrow">
+    <h2 class="h2 mb-4">The hardest part is <em>showing up</em> the first time.</h2>
+    <p class="lead" style="opacity: 0.78; max-width: 560px; margin: 0 auto 36px;">
+      Come to one social. Talk to a few members. Then decide. Our next social is the last Friday of this month and we'll have name tags.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="contact.html" class="btn btn-coral">Join Aquanauts <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-ghost-dark">Come to a social first</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Tom's <span>· Dive & Swim</span></a>
+      <p>Austin's original swim school and dive shop. Family-owned and Burnet-Road-grown since 1982.</p>
+      <div class="footer-contact">
+        5909 Burnet Rd · Austin, TX 78757<br>
+        <a href="tel:5124513425">(512) 451-3425</a><br>
+        <a href="mailto:sales@tomsscuba.com">sales@tomsscuba.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Swim</h4>
+      <a href="swim.html">Group lessons</a>
+      <a href="swim.html">Private lessons</a>
+      <a href="swim.html">Summer camps</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dive</h4>
+      <a href="dive.html">Open water cert</a>
+      <a href="dive.html#specialties">Specialty courses</a>
+      <a href="dive.html#calendar">Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="travel.html">Travel & trips</a>
+      <a href="club.html">Aquanauts club</a>
+      <a href="shop.html">Shop & gear</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tom's</h4>
+      <a href="about.html">About</a>
+      <a href="gift-cards.html">Gift cards</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tom's Dive & Swim · Family-owned in Austin since 1982</span>
+    <span>Hours: M–F 10–6:30 · Sat 10–5 · Sun closed</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
