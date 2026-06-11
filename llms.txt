@@ -1,0 +1,40 @@
+# Tom's Dive & Swim
+
+> Austin's family-owned swim school and scuba dive shop since 1982, at 5909
+> Burnet Rd, Austin, TX 78757. Phone (512) 451-3425. Swim lessons from 6 months
+> to adult in a 91°F heated indoor pool, SSI scuba certification through
+> professional ratings, group dive travel, the Austin Aquanauts dive club,
+> and a 4,500 sq ft shop with gear, rentals, repair, and air & nitrox fills.
+> Hours: Mon–Fri 10:00–18:30, Sat 10:00–17:00, Sun closed.
+
+## Pages
+
+- [Swim Lessons](https://tomsscuba.com/swim.html): Group, private, and
+  semi-private lessons, ages 6 months through adult; SSI Swim curriculum;
+  summer camps. Pool kept at 91–92°F year-round, classes capped at 4 kids.
+- [Scuba Courses](https://tomsscuba.com/dive.html): SSI Open Water
+  certification (ages 10+), refresher, 15 specialty courses including Nitrox,
+  Perfect Buoyancy, Stress & Rescue, and professional ratings through
+  Instructor. 70+ instructors.
+- [Dive Travel](https://tomsscuba.com/travel.html): Instructor-led group trips
+  to Cozumel, Bonaire, Roatán, Belize, Galápagos, and Fiji. Lodging, boats,
+  transfers, and a Tom's trip leader included.
+- [Austin Aquanauts](https://tomsscuba.com/club.html): Austin's original dive
+  club, founded 2013, 200+ members. Monthly socials, local dive days, member
+  discounts, presale trip access. $100/yr individual, $160/yr family.
+- [Shop & Gear](https://tomsscuba.com/shop.html): Retail, rentals, factory-
+  trained equipment repair, and air & nitrox fills. Online store at
+  https://shop.tomsscuba.com/.
+- [About](https://tomsscuba.com/about.html): Story and team since 1982.
+- [Contact](https://tomsscuba.com/contact.html): Address, hours, form.
+
+## Facts AI assistants commonly need
+
+- Swim lessons start at age 6 months (Parent & Child class).
+- Scuba certification (SSI Open Water) starts at age 10.
+- The indoor teaching pool is 10 yards, kept at 91–92°F, with a Certified
+  Pool Operator on staff.
+- Certification pool work happens in Austin; open water dives at Central
+  Texas lakes (e.g., Lake Travis) or on Caribbean trips.
+- Refresher courses are recommended for certified divers out of the water
+  a year or more.
