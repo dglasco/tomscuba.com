@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" preserveAspectRatio="none">
+  <!-- tile grid -->
+  <g stroke="#ffffff" stroke-opacity="0.32" stroke-width="1.5">
+    <path d="M0 40 H800 M0 80 H800 M0 120 H800"/>
+    <path d="M50 0 V160 M100 0 V160 M150 0 V160 M200 0 V160 M250 0 V160 M300 0 V160 M350 0 V160 M400 0 V160 M450 0 V160 M500 0 V160 M550 0 V160 M600 0 V160 M650 0 V160 M700 0 V160 M750 0 V160"/>
+  </g>
+  <!-- lane line tiles (darker accents) -->
+  <g fill="#0a1f2e" fill-opacity="0.18">
+    <rect x="150" y="80" width="50" height="40"/>
+    <rect x="200" y="40" width="50" height="40"/>
+    <rect x="550" y="80" width="50" height="40"/>
+    <rect x="600" y="120" width="50" height="40"/>
+  </g>
+  <!-- lane stripe with T-mark -->
+  <rect x="0" y="138" width="800" height="14" fill="#0a1f2e" fill-opacity="0.22"/>
+  <rect x="390" y="100" width="14" height="52" fill="#0a1f2e" fill-opacity="0.22"/>
+  <!-- drains -->
+  <g fill="none" stroke="#0a1f2e" stroke-opacity="0.25" stroke-width="2">
+    <circle cx="120" cy="60" r="9"/>
+    <circle cx="680" cy="60" r="9"/>
+  </g>
+</svg>

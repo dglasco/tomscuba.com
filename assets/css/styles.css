@@ -739,3 +739,24 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .bubble, .swim-fish { display: none; }
 }
+
+/* ============ POOL SCENERY (swim pages) ============ */
+.pool-floor {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 150px;
+  background: url('../img/pool-floor.svg') repeat-x bottom center / 800px 150px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.55;
+}
+@media (max-width: 768px) {
+  .pool-floor { height: 100px; background-size: 560px 100px; }
+}
+.swimmer-kid {
+  position: absolute;
+  left: -110px;
+  pointer-events: none;
+  z-index: 1;
+}
+.swimmer-kid.rtl { left: auto; right: -110px; }
+.swimmer-kid svg { display: block; animation: fishBob ease-in-out infinite; }

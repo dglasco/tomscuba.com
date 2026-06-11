@@ -52,40 +52,60 @@
       '><path d="' + FISH_PATH + '" fill="' + color + '"/></svg>';
   }
 
+  // kid swimmer glyphs (facing right): freestyle + kickboard poses
+  function swimmerSvg(w, color, flip) {
+    const h = Math.round(w * 0.34);
+    const kickboard = Math.random() < 0.45;
+    const body = kickboard
+      ? '<circle cx="49" cy="8" r="4.6"/>' +
+        '<rect x="55" y="5.5" width="9" height="5" rx="2.5"/>' +
+        '<path d="M44 11 C36 13 26 12 16 14 C12 15 8 13 4 15" fill="none" stroke-width="5" stroke-linecap="round"/>'
+      : '<circle cx="50" cy="7" r="4.6"/>' +
+        '<path d="M46 10 C52 6 58 5 63 7" fill="none" stroke-width="4" stroke-linecap="round"/>' +
+        '<path d="M44 11 C36 15 26 15 18 12 C12 10 8 12 3 14" fill="none" stroke-width="5" stroke-linecap="round"/>';
+    const splash = '<circle cx="6" cy="8" r="1.6"/><circle cx="11" cy="5" r="1.2"/><circle cx="3" cy="12" r="1.1"/>';
+    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 66 22"' +
+      (flip ? ' style="transform: scaleX(-1);"' : '') +
+      '><g fill="' + color + '" stroke="' + color + '">' + body + splash + '</g></svg>';
+  }
+
   function addScenery(el, opts) {
     if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+    const pool = el.classList.contains('hero-pool');
 
-    // reef silhouette along the bottom
+    // floor: tiled pool bottom on swim pages, coral reef elsewhere
     if (opts.reef) {
-      const reef = document.createElement('div');
-      reef.className = 'reef-floor';
-      reef.setAttribute('aria-hidden', 'true');
-      el.appendChild(reef);
+      const floor = document.createElement('div');
+      floor.className = pool ? 'pool-floor' : 'reef-floor';
+      floor.setAttribute('aria-hidden', 'true');
+      el.appendChild(floor);
     }
 
-    // drifting fish
-    const dark = el.classList.contains('hero-pool');
     for (let i = 0; i < (opts.fish || 0); i++) {
       const wrap = document.createElement('div');
       const goingLeft = Math.random() < 0.5;
-      wrap.className = 'swim-fish' + (goingLeft ? ' rtl' : '');
+      wrap.className = (pool ? 'swimmer-kid' : 'swim-fish') + (goingLeft ? ' rtl' : '');
       wrap.setAttribute('aria-hidden', 'true');
-      wrap.style.top = (8 + Math.random() * 55) + '%';
+      const flip = pool ? goingLeft : !goingLeft; // swimmers face right, fish face left
 
-      const size = 16 + Math.random() * 36;
-      const a = dark ? (0.07 + (size / 52) * 0.10) : (0.07 + (size / 52) * 0.11);
-      const color = dark
-        ? 'rgba(10, 31, 46, ' + a.toFixed(2) + ')'
-        : 'rgba(245, 237, 224, ' + a.toFixed(2) + ')';
+      if (pool) {
+        // children swimming: a bit larger, ink-toned, mid-water
+        wrap.style.top = (22 + Math.random() * 42) + '%';
+        const size = 46 + Math.random() * 44;
+        const a = 0.12 + (size / 90) * 0.12;
+        wrap.innerHTML = swimmerSvg(size, 'rgba(10, 31, 46, ' + a.toFixed(2) + ')', flip);
+      } else {
+        wrap.style.top = (8 + Math.random() * 55) + '%';
+        const size = 16 + Math.random() * 36;
+        const a = 0.07 + (size / 52) * 0.11;
+        const color = 'rgba(245, 237, 224, ' + a.toFixed(2) + ')';
+        const school = Math.random() < 0.3;
+        wrap.innerHTML = school
+          ? fishSvg(size, color, flip) + fishSvg(size * 0.7, color, flip) + fishSvg(size * 0.5, color, flip)
+          : fishSvg(size, color, flip);
+      }
 
-      // 1 fish, or a small school of 3
-      const school = Math.random() < 0.3;
-      const flip = !goingLeft; // path faces left by default
-      wrap.innerHTML = school
-        ? fishSvg(size, color, flip) + fishSvg(size * 0.7, color, flip) + fishSvg(size * 0.5, color, flip)
-        : fishSvg(size, color, flip);
-
-      const dur = 28 + Math.random() * 42;
+      const dur = pool ? (22 + Math.random() * 26) : (28 + Math.random() * 42);
       wrap.style.animation = (goingLeft ? 'swimLeft' : 'swimRight') + ' ' + dur + 's linear infinite';
       wrap.style.animationDelay = (-Math.random() * dur) + 's';
       wrap.querySelectorAll('svg').forEach(s => {
