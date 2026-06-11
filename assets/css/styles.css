@@ -194,8 +194,8 @@ h1 em, h2 em, h3 em {
 }
 .hero-pool {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(240,220,180,0.3) 0%, transparent 50%),
-    linear-gradient(180deg, #f7d99a 0%, #e8a87c 40%, #5a9ba8 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.4) 0%, transparent 55%),
+    linear-gradient(180deg, #9fd8e8 0%, #56b0ce 45%, #2a85a6 100%);
   color: var(--ink);
 }
 .hero-pool .hero-eyebrow, .hero-pool h1 em { color: var(--coral-d); }
@@ -747,7 +747,6 @@ footer {
   background: url('../img/pool-floor.svg') repeat-x bottom center / 800px 150px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.55;
 }
 @media (max-width: 768px) {
   .pool-floor { height: 100px; background-size: 560px 100px; }

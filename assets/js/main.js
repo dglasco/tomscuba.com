@@ -52,19 +52,27 @@
       '><path d="' + FISH_PATH + '" fill="' + color + '"/></svg>';
   }
 
-  // kid swimmer glyphs (facing right): freestyle + kickboard poses
+  // kid swimmer silhouettes (facing right): freestyle with recovery arm, or kickboard
   function swimmerSvg(w, color, flip) {
-    const h = Math.round(w * 0.34);
-    const kickboard = Math.random() < 0.45;
+    const h = Math.round(w * 0.43);
+    const kickboard = Math.random() < 0.4;
     const body = kickboard
-      ? '<circle cx="49" cy="8" r="4.6"/>' +
-        '<rect x="55" y="5.5" width="9" height="5" rx="2.5"/>' +
-        '<path d="M44 11 C36 13 26 12 16 14 C12 15 8 13 4 15" fill="none" stroke-width="5" stroke-linecap="round"/>'
-      : '<circle cx="50" cy="7" r="4.6"/>' +
-        '<path d="M46 10 C52 6 58 5 63 7" fill="none" stroke-width="4" stroke-linecap="round"/>' +
-        '<path d="M44 11 C36 15 26 15 18 12 C12 10 8 12 3 14" fill="none" stroke-width="5" stroke-linecap="round"/>';
-    const splash = '<circle cx="6" cy="8" r="1.6"/><circle cx="11" cy="5" r="1.2"/><circle cx="3" cy="12" r="1.1"/>';
-    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 66 22"' +
+      ? // kickboard: head up, arms forward to the board, flutter kick
+        '<circle cx="50" cy="10" r="5.6"/>' +
+        '<path d="M54 13 C58 12 61 12 64 13" fill="none" stroke-width="4" stroke-linecap="round"/>' +
+        '<rect x="62" y="9.5" width="10" height="6" rx="3"/>' +
+        '<path d="M45 14 C38 17 31 17 25 16" fill="none" stroke-width="6.5" stroke-linecap="round"/>' +
+        '<path d="M25 15 C20 12 16 10 12 9" fill="none" stroke-width="5" stroke-linecap="round"/>' +
+        '<path d="M25 17 C20 20 16 23 12 25" fill="none" stroke-width="5" stroke-linecap="round"/>'
+      : // freestyle: lead arm reaching, recovery arm arched over the back, scissor kick
+        '<circle cx="52" cy="11" r="5.6"/>' +
+        '<path d="M56 14 C61 12 66 12 70 14" fill="none" stroke-width="4" stroke-linecap="round"/>' +
+        '<path d="M45 12 C41 4 34 2 28 6" fill="none" stroke-width="4" stroke-linecap="round"/>' +
+        '<path d="M47 14 C40 17 33 17 26 15" fill="none" stroke-width="6.5" stroke-linecap="round"/>' +
+        '<path d="M26 14 C21 11 17 9 13 8" fill="none" stroke-width="5" stroke-linecap="round"/>' +
+        '<path d="M26 16 C21 19 17 22 13 24" fill="none" stroke-width="5" stroke-linecap="round"/>';
+    const splash = '<circle cx="9" cy="11" r="1.8"/><circle cx="14" cy="6" r="1.4"/><circle cx="7" cy="18" r="1.4"/><circle cx="12" cy="22" r="1.2"/>';
+    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 74 32"' +
       (flip ? ' style="transform: scaleX(-1);"' : '') +
       '><g fill="' + color + '" stroke="' + color + '">' + body + splash + '</g></svg>';
   }
@@ -90,9 +98,9 @@
 
       if (pool) {
         // children swimming: a bit larger, ink-toned, mid-water
-        wrap.style.top = (22 + Math.random() * 42) + '%';
-        const size = 46 + Math.random() * 44;
-        const a = 0.12 + (size / 90) * 0.12;
+        wrap.style.top = (20 + Math.random() * 42) + '%';
+        const size = 60 + Math.random() * 55;
+        const a = 0.18 + (size / 115) * 0.16;
         wrap.innerHTML = swimmerSvg(size, 'rgba(10, 31, 46, ' + a.toFixed(2) + ')', flip);
       } else {
         wrap.style.top = (8 + Math.random() * 55) + '%';

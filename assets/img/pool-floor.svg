@@ -1,22 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" preserveAspectRatio="none">
-  <!-- tile grid -->
-  <g stroke="#ffffff" stroke-opacity="0.32" stroke-width="1.5">
-    <path d="M0 40 H800 M0 80 H800 M0 120 H800"/>
-    <path d="M50 0 V160 M100 0 V160 M150 0 V160 M200 0 V160 M250 0 V160 M300 0 V160 M350 0 V160 M400 0 V160 M450 0 V160 M500 0 V160 M550 0 V160 M600 0 V160 M650 0 V160 M700 0 V160 M750 0 V160"/>
-  </g>
-  <!-- lane line tiles (darker accents) -->
-  <g fill="#0a1f2e" fill-opacity="0.18">
-    <rect x="150" y="80" width="50" height="40"/>
-    <rect x="200" y="40" width="50" height="40"/>
-    <rect x="550" y="80" width="50" height="40"/>
-    <rect x="600" y="120" width="50" height="40"/>
-  </g>
-  <!-- lane stripe with T-mark -->
-  <rect x="0" y="138" width="800" height="14" fill="#0a1f2e" fill-opacity="0.22"/>
-  <rect x="390" y="100" width="14" height="52" fill="#0a1f2e" fill-opacity="0.22"/>
-  <!-- drains -->
-  <g fill="none" stroke="#0a1f2e" stroke-opacity="0.25" stroke-width="2">
-    <circle cx="120" cy="60" r="9"/>
-    <circle cx="680" cy="60" r="9"/>
-  </g>
+<defs>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f4f9fb" stop-opacity="0"/>
+    <stop offset="0.30" stop-color="#f4f9fb" stop-opacity="0.92"/>
+    <stop offset="1" stop-color="#eef6f9" stop-opacity="0.96"/>
+  </linearGradient>
+</defs>
+<!-- white tile field, fading in at the top like depth haze -->
+<rect x="0" y="0" width="800" height="160" fill="url(#fade)"/>
+<!-- grout lines -->
+<g stroke="#8fc3d6" stroke-width="1.6" stroke-opacity="0.9">
+  <path d="M0 64 H800 M0 96 H800 M0 128 H800"/>
+  <path d="M40 48 V160 M80 48 V160 M120 48 V160 M160 48 V160 M200 48 V160 M240 48 V160 M280 48 V160 M320 48 V160 M360 48 V160 M400 48 V160 M440 48 V160 M480 48 V160 M520 48 V160 M560 48 V160 M600 48 V160 M640 48 V160 M680 48 V160 M720 48 V160 M760 48 V160"/>
+</g>
+<!-- navy lane stripe with T-mark, classic pool bottom -->
+<rect x="0" y="140" width="800" height="13" fill="#143b56" fill-opacity="0.85"/>
+<rect x="392" y="104" width="13" height="49" fill="#143b56" fill-opacity="0.85"/>
+<!-- drains -->
+<g fill="none" stroke="#7eb4c8" stroke-width="2.4">
+  <circle cx="140" cy="112" r="9"/>
+  <circle cx="660" cy="112" r="9"/>
+</g>
+<g stroke="#7eb4c8" stroke-width="1.6">
+  <path d="M134 112 H146 M140 106 V118 M654 112 H666 M660 106 V118"/>
+</g>
 </svg>
