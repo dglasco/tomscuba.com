@@ -12,16 +12,16 @@ sample, stale, or absent. Nothing here blocks previewing; several items
    JotForm embeds the business already uses. Until then the form silently
    loses customer inquiries, which is worse than no form.
 
-2. **Stale trip data.** `travel.html` and `events.html` show sample trips
-   with 2025 dates that are now in the past (Cozumel Sep 2025, Bonaire Oct
-   2025, Roatán Nov 2025). The live DS360 site currently lists *Bonaire
-   July 11–18, 2026*. Replace all six trip cards with the real 2026–27 trip
-   calendar from the POS, with real prices and real availability states.
+2. **Stale trip data.** ✅ DONE — travel/events/club now show the three real
+   trips from the live POS (Bonaire Jul 2026, Dominica Nov 2026, Grand
+   Cayman Apr 2027) with their real photos and trip-page links. Pricing
+   intentionally deferred to the trip pages. Keep these in sync as trips
+   are added/sold out.
 
-3. **Sample class calendar.** The dive calendar on `dive.html` and the
-   events on `events.html`/`club.html` are illustrative (June–Sep dates,
-   invented instructor names "Andrew P." / "Sarah L."). Replace with real
-   sessions and real names — or remove names — before launch.
+3. **Sample class calendar.** ✅ DONE — invented sessions and instructor
+   names removed. Dive/events/club now list the two real upcoming events
+   (Bubble Hour Jun 24, Mammoth Lake Dive) plus ongoing-class rows linking
+   to registration and the live dive360.biz calendar.
 
 4. **Placeholder prices.** Swim pricing ($22/$55/$35), club tiers
    ($100/$160 — verify still current), and the fill-price table on
@@ -40,10 +40,13 @@ sample, stale, or absent. Nothing here blocks previewing; several items
 
 ## 🟡 High value — fix in the first weeks
 
-7. **Real photos.** The site uses zero photographs. Google local results
-   and conversion both favor real imagery: pool mid-lesson, storefront,
-   gear wall, trip shots. Needed: 5–15 photos + alt text; also replace the
-   generated og-image with a real photo version.
+7. **Real photos.** ⚠️ PARTIALLY DONE — the site now embeds the business's
+   own photos (pool, scuba class, travel, trip images, course images,
+   Aquanauts logo) hot-linked from the DiveShop360 S3 bucket
+   (imgds360live.s3.amazonaws.com). **Before cutover, download copies of
+   these images into `assets/img/` and switch the URLs** — hot-links break
+   if the DS360 bucket ever changes. Still wanted: fresh shop-floor and
+   lesson photos, and a real-photo og-image.
 
 8. **Swim booking flow decision.** The business currently books swim
    lessons via austinswim.com (iClassPro). The new swim page routes to the
