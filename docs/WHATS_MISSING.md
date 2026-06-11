@@ -29,10 +29,12 @@ sample, stale, or absent. Nothing here blocks previewing; several items
    fill table was replaced with "posted in store / call." Club tiers
    ($100/$160) are owner-provided; confirm at next renewal cycle.
 
-5. **Legal/policy pages.** The current DS360 site has Privacy Policy,
-   Customer Service, and Returns & Exchanges pages. The new site has none.
-   At minimum, a privacy policy is needed (the site sets GTM/analytics
-   cookies). Port the existing pages or link to the storefront's versions.
+5. **Legal/policy pages.** ⚠️ DRAFTED — `policies.html` now contains sample
+   policies for privacy, returns, class refunds, swim billing, trip
+   deposits, equipment service, safety/medical, and site terms. **Items
+   marked [confirm] need owner verification, and the whole page needs a
+   legal review and removal of the sample banner before launch.** Compare
+   against the existing DS360 Customer Service / Privacy / Returns pages.
 
 6. **Storefront deep links.** ✅ DONE — commerce CTAs now use real deep
    links pulled from the live site (`/courses/...`, `/product-groups/...`,
