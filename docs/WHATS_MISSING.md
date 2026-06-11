@@ -23,9 +23,11 @@ sample, stale, or absent. Nothing here blocks previewing; several items
    (Bubble Hour Jun 24, Mammoth Lake Dive) plus ongoing-class rows linking
    to registration and the live dive360.biz calendar.
 
-4. **Placeholder prices.** Swim pricing ($22/$55/$35), club tiers
-   ($100/$160 — verify still current), and the fill-price table on
-   `shop.html` (literally "$ / $$ / $$$") need real numbers.
+4. **Placeholder prices.** ✅ DONE — real published prices now sitewide:
+   swim $36/$85/$120 (austinswim.com), Open Water $619 / private $719,
+   Try Scuba $85 w/ $50 credit. Fill prices aren't published online, so the
+   fill table was replaced with "posted in store / call." Club tiers
+   ($100/$160) are owner-provided; confirm at next renewal cycle.
 
 5. **Legal/policy pages.** The current DS360 site has Privacy Policy,
    Customer Service, and Returns & Exchanges pages. The new site has none.

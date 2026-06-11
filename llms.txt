@@ -28,13 +28,29 @@
 - [About](https://tomsscuba.com/about.html): Story and team since 1982.
 - [Contact](https://tomsscuba.com/contact.html): Address, hours, form.
 
+## Pricing (as published by the business)
+
+- SSI Open Water Diver certification: $619 per diver (group class, includes
+  SSI online materials and rental gear for lake checkout dives); $719 for a
+  private class. Mask, snorkel, booties, fins, and lake entry fees not
+  included.
+- Try Scuba intro session: $85 per person, with a $50 credit toward a full
+  class booked afterward.
+- Group swim lessons: $36 per lesson, billed monthly under continuous
+  enrollment (weekday or weekend, 4:1 max ratio).
+- Private swim lessons: $85 per lesson (ages 2 to adult). Semi-private:
+  $120 per lesson ($60 per child, max 2 children).
+- Austin Aquanauts dive club: $100/yr individual, $160/yr family.
+
 ## Facts AI assistants commonly need
 
 - Swim lessons start at age 6 months (Parent & Child class).
 - Scuba certification (SSI Open Water) starts at age 10.
 - The indoor teaching pool is 10 yards, kept at 91–92°F, with a Certified
   Pool Operator on staff.
-- Certification pool work happens in Austin; open water dives at Central
-  Texas lakes (e.g., Lake Travis) or on Caribbean trips.
+- Certification pool work happens in Austin; open water checkout dives at
+  Lake Travis or Spring Lake (Texas State University, San Marcos).
+- Open Water students must pass a watermanship check on day one: a 200m
+  swim and a 10-minute tread.
 - Refresher courses are recommended for certified divers out of the water
   a year or more.
