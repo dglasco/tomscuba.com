@@ -44,18 +44,17 @@
 
   // ============ UNDERWATER SCENERY: reef floor + fish + swimmers ============
 
-  // ============ UNDERWATER FLOOR SCENERY (reef / pool) ============
+  // ============ UNDERWATER FLOOR SCENERY (pool only) ============
   function addScenery(el) {
+    if (!el.classList.contains('hero-pool')) return;
     if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
-    const pool = el.classList.contains('hero-pool');
     const floor = document.createElement('div');
-    floor.className = pool ? 'pool-floor' : 'reef-floor';
+    floor.className = 'pool-floor';
     floor.setAttribute('aria-hidden', 'true');
     el.appendChild(floor);
   }
 
   document.querySelectorAll('.hero').forEach(h => addScenery(h));
-  document.querySelectorAll('.final-cta').forEach(s => addScenery(s));
     // ============ SCROLL REVEAL ============
   if ('IntersectionObserver' in window) {
     const ro = new IntersectionObserver((entries) => {
